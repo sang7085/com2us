@@ -1,0 +1,32 @@
+@import 'base/reset';
+@import 'base/variables';
+@import 'base/mixins';
+
+html,
+body {
+	font-family: $font-family-base;
+	// font-size: calc(100vw * 10 / 767);
+}
+
+// @media (min-width: 768px) and (max-width: 1023px) {
+//   html, body {
+//     font-size: calc(100vw * 10 / 1024);
+//   }
+// }
+
+// @media (min-width: 1024px) {
+//   html, body {
+//     font-size: calc(100vw * 10 / 1920);
+//   }
+// }
+
+main {
+	width: 100%;
+	aspect-ratio: 96 / 449;
+	background: url('../images/main-bg.jpg') no-repeat center top / cover;
+
+	.txt {
+		font-size: 1.6rem;
+	}
+
+}

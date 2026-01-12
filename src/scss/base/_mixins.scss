@@ -1,0 +1,59 @@
+// 믹스인 정의
+
+// Flexbox 믹스인
+@mixin flex($direction: row, $justify: flex-start, $align: stretch) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+// 중앙 정렬 믹스인
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// 반응형 미디어 쿼리 믹스인
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == mobile {
+        @media (max-width: 767px) {
+            @content;
+        }
+    }
+    @if $breakpoint == tablet {
+        @media (min-width: 768px) and (max-width: 1023px) {
+            @content;
+        }
+    }
+    @if $breakpoint == desktop {
+        @media (min-width: 1024px) {
+            @content;
+        }
+    }
+}
+
+// 텍스트 말줄임표 믹스인
+@mixin text-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// 포지션 믹스인
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+    position: $position;
+    @if $top {
+        top: $top;
+    }
+    @if $right {
+        right: $right;
+    }
+    @if $bottom {
+        bottom: $bottom;
+    }
+    @if $left {
+        left: $left;
+    }
+}
