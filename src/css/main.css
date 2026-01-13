@@ -50,6 +50,7 @@ table {
 
 html,
 body {
+  font-family: "NanumBarunGothic", sans-serif;
   font-size: 1.04vw;
 }
 
@@ -60,7 +61,8 @@ body {
 
 .section-tit {
   margin: 4rem 0;
-  font-size: 2rem;
+  font-size: 3.2rem;
+  font-weight: 700;
   text-align: center;
   color: #4e49f1;
 }
