@@ -50,7 +50,19 @@ table {
 
 html,
 body {
-  font-family: "NanumBarunGothic", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 1.04vw;
+}
+
+.inner {
+  margin: 0 auto;
+  width: calc(100% - 8rem);
+}
+
+.section-tit {
+  margin: 4rem 0;
+  font-size: 2rem;
+  text-align: center;
+  color: #4e49f1;
 }
 
 main {
@@ -58,6 +70,8 @@ main {
   aspect-ratio: 96/449;
   background: url("../images/main-bg.jpg") no-repeat center top/cover;
 }
-main .txt {
-  font-size: 1.6rem;
+
+.section-1 {
+  padding-top: 40rem;
+  width: 100%;
 }/*# sourceMappingURL=main.css.map */

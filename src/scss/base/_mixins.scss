@@ -57,3 +57,8 @@
         left: $left;
     }
 }
+
+// 픽셀을 vw로 변환하는 함수
+@function vw($px) {
+    @return ($px / $base-width) * 100vw;
+}

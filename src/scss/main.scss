@@ -2,31 +2,86 @@
 @import 'base/variables';
 @import 'base/mixins';
 
+// 960px 이상
 html,
 body {
-	font-family: $font-family-base;
-	// font-size: calc(100vw * 10 / 767);
+  font-size: 1.04vw;
 }
 
-// @media (min-width: 768px) and (max-width: 1023px) {
+// 960px 이하
+// @media (max-width: 959px) {
 //   html, body {
-//     font-size: calc(100vw * 10 / 1024);
+//     font-size: 0.52vw;
 //   }
 // }
 
-// @media (min-width: 1024px) {
-//   html, body {
-//     font-size: calc(100vw * 10 / 1920);
+
+
+// @media (min-width: 1200px) and (max-width: 1440px) {
+//   html {
+//       font-size: 0.694vw;
 //   }
 // }
+
+
+// @media (max-width: 1480px) {
+//   html {
+//       font-size: 0.06756756756756757vw;
+//   }
+// }
+
+// @media (max-width: 1023px) {
+//   html {
+//       font-size: 0.09775171065493645vw;
+//   }
+// }
+
+// @media (max-width: 860px) {
+//   html {
+//       font-size: 0.13020833333333335vw;
+//   }
+// }
+
+// @media (max-width: 540px) {
+//   html {
+//       font-size: 0.26666666666666665vw;
+//   }
+// }
+
+// 2.태블릿용 (주석 처리 - 960px 기준으로 사용)
+// @media (max-width: 1023px) {
+//   html,body {
+//     font-size: clamp(10px, 0.98vw, 16px);
+//   }
+// }
+  
+// 3. 모바일용 (주석 처리 - 960px 기준으로 사용)
+// @media (max-width: 767px){
+// 	html,body {
+//     font-size: clamp(10px, 1.302vw, 16px);
+//   }
+// }
+
+.inner {
+  margin: 0 auto;
+  width: calc(100% - 8rem);
+}
+
+.section-tit {
+  margin: 4rem 0;
+  font-size: 2rem;
+  text-align: center;
+  color: #4e49f1;
+}
 
 main {
-	width: 100%;
-	aspect-ratio: 96 / 449;
-	background: url('../images/main-bg.jpg') no-repeat center top / cover;
+  width: 100%;
+  aspect-ratio: 96 / 449;
+  background: url('../images/main-bg.jpg') no-repeat center top / cover;
 
-	.txt {
-		font-size: 1.6rem;
-	}
+}
 
+.section-1 {
+  padding-top: 40rem;
+  width: 100%;
 }
