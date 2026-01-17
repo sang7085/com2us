@@ -64,16 +64,10 @@ button {
 html,
 body {
   font-family: "NanumBarunGothic", sans-serif;
-  font-size: 1.042vw;
+  font-size: 1.04vw;
   font-weight: 400;
 }
 
-@media (max-width: 960px) {
-  html,
-  body {
-    font-size: 1.05vw;
-  }
-}
 .sr-only {
   position: absolute;
   width: 1px;
