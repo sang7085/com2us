@@ -3,17 +3,36 @@
 @import 'base/mixins';
 
 // 960px 이상
-html,
-body {
+// html,
+// body {
+//   font-family: 'NanumBarunGothic', sans-serif;
+//   font-size: 1.042vw;
+//   font-weight: 400;
+// }
+
+// @media (max-width: 960px) {
+//   html,
+//   body {
+//     font-size: 1.05vw;
+//   }
+// }
+
+html, body {
   font-family: 'NanumBarunGothic', sans-serif;
-  font-size: 1.042vw;
   font-weight: 400;
+  font-size: calc(100vw * 10 / 767);
 }
 
-@media (max-width: 960px) {
-  html,
-  body {
-    font-size: 1.05vw;
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  html, body {
+    font-size: calc(100vw * 10 / 1024);
+  }
+}
+
+@media (min-width: 1024px) {
+  html, body {
+    font-size: calc(100vw * 10 / 1920);
   }
 }
 

@@ -61,17 +61,20 @@ button {
   cursor: pointer;
 }
 
-html,
-body {
+html, body {
   font-family: "NanumBarunGothic", sans-serif;
-  font-size: 1.042vw;
   font-weight: 400;
+  font-size: 1.3037809648vw;
 }
 
-@media (max-width: 960px) {
-  html,
-  body {
-    font-size: 1.05vw;
+@media (min-width: 768px) and (max-width: 1023px) {
+  html, body {
+    font-size: 0.9765625vw;
+  }
+}
+@media (min-width: 1024px) {
+  html, body {
+    font-size: 0.5208333333vw;
   }
 }
 .sr-only {
