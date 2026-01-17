@@ -209,9 +209,6 @@ main {
           align-items: center;
   height: 10.5rem;
 }
-.mission-box .mission-list.active .icon-box {
-  background: url("../images/icon-stamp-en.png") no-repeat center center/8.3rem;
-}
 .mission-box .mission-list .icon-box {
   width: 10.5rem;
   height: 100%;
