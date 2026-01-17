@@ -17,5 +17,6 @@
         "> 1%",
         "last 2 versions"
     ],
-    "liveServer.settings.CustomBrowser": "chrome"
+    "liveServer.settings.CustomBrowser": "chrome",
+    "terminal.integrated.defaultProfile.windows": "Git Bash"
 }
