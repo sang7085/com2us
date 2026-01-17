@@ -6,9 +6,17 @@
 html,
 body {
   font-family: 'NanumBarunGothic', sans-serif;
-  font-size: 1.04vw;
+  font-size: 1.042vw;
   font-weight: 400;
 }
+
+@media (max-width: 960px) {
+  html,
+  body {
+    font-size: 1.05vw;
+  }
+}
+
 
 // common start
 
@@ -78,7 +86,7 @@ main {
 .arrow-txt {
   @include text-base();
   position: absolute;
-  top: 47.5rem;
+  top: 46.5rem;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -93,7 +101,7 @@ main {
   width: 100%;
   .card-list {
     @include text-base();
-    margin-top: 27rem;
+    margin-top: 26.5rem;
     width: 50%;
     height: 8rem;
     text-align: center;
@@ -107,20 +115,76 @@ main {
 
 // section-2 start
 .item-count {
-  margin: 5rem 0 0 17rem;
-  border: 1px solid red;
+  padding: 2rem 0;
+  margin: 3rem 0 0 17.5rem;
   width: 21.2rem;
   text-align: center;
   .count-tit {
     @include text-base();
+    text-align: center;
   }
   .count-num {
+    margin-top: 1.6rem;
+    font-size: 3.8rem;
+    color: $color-yellow;
+  }
+}
 
+.mission-box {
+  padding: 0 3rem;
+  margin-top: 9.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  .mission-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10.5rem;
+
+    &.active {
+      .icon-box {
+        background: url("../images/icon-stamp-en.png") no-repeat center center / 8.3rem;
+      }
+    }
+
+    .icon-box {
+      width: 10.5rem;
+      height: 100%;
+    }
+
+    .info-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: calc(100% - 10.5rem);
+      height: 100%;
+    }
+
+    .mission-txt {
+      @include text-base();
+      color: $color-white;
+    }
+  }
+  .mission-num {
+    @include text-base();
+    color: $color-yellow;
+  }
+  .num {
+  }
+  .total-num {
   }
 }
 // section-2 end
 
-// section-1 notice-con start
+// section-3 start
+.shadow {
+  text-shadow: 0 0.3rem 0 rgba(0, 0, 0, 0.55);
+}
+// section-3 end
+
+// notice-con start
 
 .notice-con {
   margin-top: 3rem;
