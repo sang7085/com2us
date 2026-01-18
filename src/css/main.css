@@ -170,7 +170,7 @@ main {
   height: auto;
 }
 .card-box.item3 .card-list.active .card-info .stamp {
-  display: block;
+  display: block !important;
   border: 1px solid red;
 }
 .card-box.item3 .card-tit {
