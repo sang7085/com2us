@@ -10,18 +10,13 @@ body {
   font-size: 1.042vw;
 }
 
-// html,
-// body {
-//   font-size: clamp(9px, 1.042vw, 10px);
-// }
-
-// @media (max-width: 767px) {
-
-//   html,
-//   body {
-//     font-size: 10px;
-//   }
-// }
+// 960px 이하
+@media (max-width: 960px) {
+  html,
+  body {
+    font-size: 1.044vw;
+  }
+}
 
 // common start
 

@@ -69,6 +69,12 @@ body {
   font-size: 1.042vw;
 }
 
+@media (max-width: 960px) {
+  html,
+  body {
+    font-size: 1.044vw;
+  }
+}
 .sr-only {
   position: absolute;
   width: 1px;
