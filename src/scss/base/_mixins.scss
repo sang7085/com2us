@@ -9,3 +9,8 @@
 @mixin text-shadow($x: 0, $y: 0.3rem, $blur: 4px, $color: rgba(0, 0, 0, 0.55)) {
     text-shadow: $x $y $blur $color;
 }
+
+// 픽셀을 vw로 변환하는 함수
+@function vw($px) {
+    @return ($px / $base-width) * 100vw;
+}

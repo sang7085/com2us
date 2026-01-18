@@ -72,7 +72,7 @@ main {
 }
 
 .section-1 {
-  padding-top: 40rem;
+  padding-top: vw(400); // 40rem = 400px (기준 10px) → 960px 기준으로 vw 변환
   width: 100%;
 }
 
@@ -98,8 +98,8 @@ main {
 .badge {
   @include text-base();
   position: absolute;
-  top: 32rem;
-  right: 6.5rem;
+  top: vw(320); // 32rem = 320px
+  right: vw(65); // 6.5rem = 65px
   text-align: center;
   color: $color-yellow;
 } 
@@ -107,7 +107,7 @@ main {
 .arrow-txt {
   @include text-base();
   position: absolute;
-  top: 46.5rem;
+  top: vw(470); // 47rem = 470px
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -122,9 +122,9 @@ main {
   width: 100%;
   .card-list {
     @include text-base();
-    margin-top: 26.5rem;
+    margin-top: vw(265); // 26.5rem = 265px
     width: 50%;
-    height: 8rem;
+    height: vw(80); // 8rem = 80px
     text-align: center;
     color: $color-white;
     border: 1px solid red;
