@@ -140,7 +140,7 @@ main {
 
     &.active {
       .icon-box {
-        // background: url("../images/icon-stamp-en.png") no-repeat center center / 8.3rem;
+        background: url("../images/icon-stamp-en.png") no-repeat center center / 8.3rem;
       }
     }
 
@@ -186,7 +186,7 @@ main {
   color: $color-yellow;
 
   & + .txt {
-    margin-top: 5rem;
+    margin-top: 4rem;
   }
 }
 
@@ -198,7 +198,7 @@ main {
     position: relative;
     height: 7.2rem;
     background: #6e66a4;
-    border: 0.3px solid #5c4fab;
+    border: 0.3rem solid #5c4fab;
     border-radius: 999px;
   
     .gauge-bar {
@@ -208,7 +208,7 @@ main {
       width: 50px;
       height: 100%;
       background: linear-gradient(to right, #3fbbfe, #a541ff);
-      border: 0.3px solid $color-white;
+      border: 0.3rem solid $color-white;
       border-radius: 999px;
   
       &::after {
@@ -229,6 +229,7 @@ main {
     display: flex;
     margin-top: 1rem;
     .step {
+      @include text-base();
       width: calc(100% / 7);
       font-size: 2rem;
       font-weight: 700;
@@ -236,6 +237,37 @@ main {
       color: $color-gray;
     }
   }
+}
+
+.gift-wrap {
+  margin: 1.5rem auto 0;
+  display: flex;
+  gap: 0.8rem;
+  width: calc(100% - 6rem);
+
+  .gift-list {
+    padding: 10rem 0 0rem;
+    width: calc((100% - 0.8rem * 6) / 7);
+    height: 13.8rem;
+    font-size: 2rem;
+    text-align: center;
+    color: $color-gray;
+
+    &.active {
+      background: url("../images/icon-stamp-en.png") no-repeat center / 8.3rem;
+      background-position-y: 1rem;
+    }
+  }
+}
+
+.balloon-txt {
+  @include text-base();
+  position: absolute;
+  bottom: 23.5rem;
+  right: 12rem;
+  font-size: 2.2rem;
+  color: $color-highlight;
+
 }
 
 
