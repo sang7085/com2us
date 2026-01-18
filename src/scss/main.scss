@@ -17,33 +17,22 @@ body {
 // common start
 
 .countdown {
-  position: fixed;
+  @include text-base();
+  position: absolute;
   top: 2rem;
-  left: 2rem;
+  left: 4rem;
   z-index: 1000;
-  padding: 1rem 2rem;
-  background: rgba(0, 0, 0, 0.7);
-  border-radius: 0.8rem;
-  color: $color-white;
-  font-size: 1.4rem;
-  font-weight: 700;
+  color: $color-gray;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   
-  .countdown-label {
-    font-size: 1.2rem;
-    color: $color-yellow;
+  .countdown-date {
+    @include text-base();
   }
   
   .countdown-time {
-    display: flex;
-    gap: 0.5rem;
-    
-    span {
-      min-width: 2.5rem;
-      text-align: center;
-    }
+    @include text-base();
   }
 }
 
@@ -192,9 +181,8 @@ main {
 
       .stamp {
         position: relative;
-        display: block !important;
+        display: none !important;
         width: 10.3rem;
-        border: 1px solid red;
         aspect-ratio: 1 / 1;
         background: url("../images/icon-stamp-en.png") no-repeat center center / cover;
 
@@ -339,7 +327,7 @@ main {
       position: absolute;
       top: 0;
       left: 0;
-      width: 50px;
+      width: 43.2rem;
       height: 100%;
       background: linear-gradient(to right, #3fbbfe, #a541ff);
       border: 0.3rem solid $color-white;

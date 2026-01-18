@@ -78,16 +78,14 @@ body {
 }
 
 .countdown {
-  position: fixed;
+  font-size: 2rem;
+  line-height: 2.6rem;
+  letter-spacing: 0.02em;
+  position: absolute;
   top: 2rem;
-  left: 2rem;
+  left: 4rem;
   z-index: 1000;
-  padding: 1rem 2rem;
-  background: rgba(0, 0, 0, 0.7);
-  border-radius: 0.8rem;
-  color: #fff;
-  font-size: 1.4rem;
-  font-weight: 700;
+  color: #363636;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -97,19 +95,15 @@ body {
           flex-direction: column;
   gap: 0.5rem;
 }
-.countdown .countdown-label {
-  font-size: 1.2rem;
-  color: #ffff6b;
+.countdown .countdown-date {
+  font-size: 2rem;
+  line-height: 2.6rem;
+  letter-spacing: 0.02em;
 }
 .countdown .countdown-time {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 0.5rem;
-}
-.countdown .countdown-time span {
-  min-width: 2.5rem;
-  text-align: center;
+  font-size: 2rem;
+  line-height: 2.6rem;
+  letter-spacing: 0.02em;
 }
 
 .sr-only {
@@ -274,9 +268,8 @@ main {
 }
 .card-box.item3 .card-info .stamp {
   position: relative;
-  display: block !important;
+  display: none !important;
   width: 10.3rem;
-  border: 1px solid red;
   aspect-ratio: 1/1;
   background: url("../images/icon-stamp-en.png") no-repeat center center/cover;
 }
@@ -432,7 +425,7 @@ main {
   position: absolute;
   top: 0;
   left: 0;
-  width: 50px;
+  width: 43.2rem;
   height: 100%;
   background: -webkit-gradient(linear, left top, right top, from(#3fbbfe), to(#a541ff));
   background: linear-gradient(to right, #3fbbfe, #a541ff);

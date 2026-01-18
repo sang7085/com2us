@@ -1,27 +1,38 @@
 // active 클래스 추가 함수
 function misstionActive(element) {
     element.classList.add('active');
+    updateMissionCount();
 }
 
-// 카운트다운
-function startCountdown() {
-    const daysEl = document.querySelector('.countdown .days');
-    const hoursEl = document.querySelector('.countdown .hours');
-    const minutesEl = document.querySelector('.countdown .minutes');
-    const secondsEl = document.querySelector('.countdown .seconds');
+// mission-list active 개수 업데이트 함수
+function updateMissionCount() {
+    const activeMissions = document.querySelectorAll('.mission-list.active');
+    const countNumSpan = document.querySelector('.count-num span');
     
-    // 일주일 후 시간 설정 (현재 시간 + 7일)
-    const endTime = new Date().getTime() + (7 * 24 * 60 * 60 * 1000);
+    if (countNumSpan) {
+        countNumSpan.textContent = activeMissions.length;
+    }
+}
+
+// 카운트다운 함수
+function startCountdown() {
+    const $days = document.querySelector('.countdown .days');
+    const $hours = document.querySelector('.countdown .hours');
+    const $minutes = document.querySelector('.countdown .minutes');
+    const $seconds = document.querySelector('.countdown .seconds');
+    
+    // 종료 시간
+    const endTime = new Date('2026-01-24T00:00:00+09:00').getTime();
     
     function updateCountdown() {
         const now = new Date().getTime();
         const distance = endTime - now;
         
         if (distance < 0) {
-            daysEl.textContent = '00';
-            hoursEl.textContent = '00';
-            minutesEl.textContent = '00';
-            secondsEl.textContent = '00';
+            $days.textContent = '00';
+            $hours.textContent = '00';
+            $minutes.textContent = '00';
+            $seconds.textContent = '00';
             return;
         }
         
@@ -30,21 +41,23 @@ function startCountdown() {
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
         
-        daysEl.textContent = String(days).padStart(2, '0');
-        hoursEl.textContent = String(hours).padStart(2, '0');
-        minutesEl.textContent = String(minutes).padStart(2, '0');
-        secondsEl.textContent = String(seconds).padStart(2, '0');
+        $days.textContent = String(days).padStart(2, '0');
+        $hours.textContent = String(hours).padStart(2, '0');
+        $minutes.textContent = String(minutes).padStart(2, '0');
+        $seconds.textContent = String(seconds).padStart(2, '0');
     }
     
     updateCountdown();
+    // 1초마다 업데이트
     setInterval(updateCountdown, 1000);
 }
 
+// 카운트다운 시작
+startCountdown();
+
+
 // 앵커
 document.addEventListener('DOMContentLoaded', () => {
-    // 카운트다운 시작
-    startCountdown();
-    
     const anchorLinks = document.querySelectorAll('.anchor-btn');
     
     anchorLinks.forEach(link => {
