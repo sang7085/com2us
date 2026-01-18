@@ -194,34 +194,50 @@ main {
   position: relative;
   margin: 3rem auto 0;
   width: calc(100% - 6rem);
-  height: 7.2rem;
-  background: #6e66a4;
-  border: 3px solid #5c4fab;
-  border-radius: 3rem;
-
-  .gauge {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50px;
-    height: 100%;
-    background: linear-gradient(to right, #3fbbfe, #a541ff);
-    border: 3px solid $color-white;
-    border-radius: 3rem;
-
-    &::after {
-      content: "";
+  .gauge-progress {
+    position: relative;
+    height: 7.2rem;
+    background: #6e66a4;
+    border: 0.3px solid #5c4fab;
+    border-radius: 999px;
+  
+    .gauge-bar {
       position: absolute;
-      top: 50%;
-      right: -3.6rem;
-      transform: translateY(-50%);
-      display: block;
-      width: 7.2rem;
-      height: 7.2rem;
-      background: url("../images/img-gauge-penguin.png") no-repeat 0 / cover;
+      top: 0;
+      left: 0;
+      width: 50px;
+      height: 100%;
+      background: linear-gradient(to right, #3fbbfe, #a541ff);
+      border: 0.3px solid $color-white;
+      border-radius: 999px;
+  
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: -3.6rem;
+        transform: translateY(-50%);
+        display: block;
+        width: 7.2rem;
+        height: 7.2rem;
+        background: url("../images/img-gauge-penguin.png") no-repeat 0 / cover;
+      }
+    }
+  }
+  
+  .gauge-step {
+    display: flex;
+    margin-top: 1rem;
+    .step {
+      width: calc(100% / 7);
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: right;
+      color: $color-gray;
     }
   }
 }
+
 
 // section-2 end
 

@@ -270,12 +270,15 @@ main {
   position: relative;
   margin: 3rem auto 0;
   width: calc(100% - 6rem);
+}
+.gauge-wrap .gauge-progress {
+  position: relative;
   height: 7.2rem;
   background: #6e66a4;
-  border: 3px solid #5c4fab;
-  border-radius: 3rem;
+  border: 0.3px solid #5c4fab;
+  border-radius: 999px;
 }
-.gauge-wrap .gauge {
+.gauge-wrap .gauge-progress .gauge-bar {
   position: absolute;
   top: 0;
   left: 0;
@@ -283,10 +286,10 @@ main {
   height: 100%;
   background: -webkit-gradient(linear, left top, right top, from(#3fbbfe), to(#a541ff));
   background: linear-gradient(to right, #3fbbfe, #a541ff);
-  border: 3px solid #fff;
-  border-radius: 3rem;
+  border: 0.3px solid #fff;
+  border-radius: 999px;
 }
-.gauge-wrap .gauge::after {
+.gauge-wrap .gauge-progress .gauge-bar::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -297,6 +300,19 @@ main {
   width: 7.2rem;
   height: 7.2rem;
   background: url("../images/img-gauge-penguin.png") no-repeat 0/cover;
+}
+.gauge-wrap .gauge-step {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 1rem;
+}
+.gauge-wrap .gauge-step .step {
+  width: 14.2857142857%;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: right;
+  color: #363636;
 }
 
 .shadow {
