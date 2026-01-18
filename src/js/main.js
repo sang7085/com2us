@@ -3,7 +3,7 @@ function misstionActive(element) {
     element.classList.add('active');
 }
 
-// 부드러운 스크롤
+// 앵커
 document.addEventListener('DOMContentLoaded', () => {
     const anchorLinks = document.querySelectorAll('.anchor-btn');
     
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             
-            // top 버튼인 경우 페이지 상단으로 이동
+            // top버튼
             if (this.classList.contains('top')) {
                 window.scrollTo({
                     top: 0,

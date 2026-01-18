@@ -160,7 +160,8 @@ main {
       color: $color-gray;
 
       .stamp {
-        display: none;
+        position: relative;
+        display: block;
         height: 100%;
         aspect-ratio: 1 / 1;
         background: url("../images/icon-stamp-large-en.png") no-repeat center center / cover;
