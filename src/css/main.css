@@ -89,9 +89,9 @@ body {
 
 main {
   width: 100%;
-  aspect-ratio: 96/449;
-  background: url("../images/main-bg.jpg") no-repeat center top/100%;
-  overflow: hidden;
+  min-height: 100vh;
+  background: url("../images/main-bg.jpg") no-repeat center top/cover;
+  position: relative;
 }
 
 .section-1 {
