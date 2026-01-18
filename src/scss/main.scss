@@ -210,11 +210,12 @@ main {
 
 // main end
 
-@media (max-width: 767px) {
-
-  /* 1. font-size 고정 (이미 있음, 유지) */
-  // html,
-  // body {
-  //   font-size: 10px;
-  // }
+// 960px 이하
+@media (max-width: 960px) {
+  .badge {
+    top: 31rem;
+  }
+  .arrow-txt {
+    top: 45.5rem;
+  }
 }
