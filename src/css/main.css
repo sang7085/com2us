@@ -97,7 +97,6 @@ main {
 .section-1 {
   padding-top: 40rem;
   width: 100%;
-  border: 1px solid red;
 }
 
 .section-tit {
@@ -261,4 +260,17 @@ main {
   line-height: 2.6rem;
   letter-spacing: 0.02em;
   color: #fff;
+}
+
+@media (max-width: 960px) {
+  html,
+  body {
+    font-size: 1.064vw;
+  }
+  .badge {
+    top: 31rem;
+  }
+  .arrow-txt {
+    top: 45.5rem;
+  }
 }/*# sourceMappingURL=main.css.map */
