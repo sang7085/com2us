@@ -259,6 +259,7 @@ main {
       -ms-flex-align: center;
           align-items: center;
   height: 10.3rem;
+  border: 1px solid red;
 }
 .mission-box .mission-list.active .icon-box .stamp {
   display: block;
