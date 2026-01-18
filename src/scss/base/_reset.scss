@@ -50,6 +50,10 @@ button {
 	outline: 0;
 	border: none;
 	cursor: pointer;
+
+	&:focus-visible {
+		border: 0.2rem solid #000;
+	}
 }
 
 a {

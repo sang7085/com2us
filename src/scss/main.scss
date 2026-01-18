@@ -2,39 +2,18 @@
 @import 'base/variables';
 @import 'base/mixins';
 
-// 960px 이상
 html {
   scroll-behavior: smooth;
 }
 
 html,
 body {
+  font-size: 1.042vw;
   font-family: 'NanumBarunGothic', sans-serif;
   font-weight: 400;
-  font-size: 1.042vw;
 }
 
 // common start
-
-.countdown {
-  @include text-base();
-  position: absolute;
-  top: 2rem;
-  left: 4rem;
-  z-index: 1000;
-  color: $color-gray;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  
-  .countdown-date {
-    @include text-base();
-  }
-  
-  .countdown-time {
-    @include text-base();
-  }
-}
 
 .sr-only {
   position: absolute;
@@ -55,15 +34,24 @@ body {
   font-weight: 700;
 }
 
-// common end
-
-// main start
-
-main {
-  width: 100%;
-  aspect-ratio: 96 / 449;
-  background: url('../images/main-bg.jpg') no-repeat center top / 100%;
-  position: relative;
+.countdown {
+  @include text-base();
+  position: absolute;
+  top: 2rem;
+  left: 4rem;
+  z-index: 1000;
+  color: $color-gray;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  
+  .countdown-date {
+    @include text-base();
+  }
+  
+  .countdown-time {
+    @include text-base();
+  }
 }
 
 .anchor-nav {
@@ -90,6 +78,17 @@ main {
       background: linear-gradient(to bottom, #ac52f9 0%, #f86d68 100%);
     }
   }
+}
+
+// common end
+
+// main start
+
+main {
+  width: 100%;
+  aspect-ratio: 96 / 449;
+  background: url('../images/main-bg.jpg') no-repeat center top / 100%;
+  position: relative;
 }
 
 .section-1 {
@@ -460,7 +459,34 @@ main {
 
 // main end
 
-// 960px 이하
+@media (min-width: 961px) {
+  .content {
+    padding: 3rem;
+  }
+  .mission-box {
+    margin-top: 9.5rem;
+  }
+  .event-tit {
+    margin-top: 6.5rem;
+  }
+  .balloon-txt {
+    bottom: 23.5rem;
+  }
+  .new-channel-txt {
+    top: 14.5rem;
+  }
+  .tv-btn {
+    top: 38rem;
+  }
+
+  .card-box{
+    &.item3 {
+      margin-top: 36.5rem;
+    }
+  }
+}
+
+// 960px 이하(devtool 과 실제 배포시 오차 보정)
 @supports (-webkit-touch-callout: none) {
   html,
   body {

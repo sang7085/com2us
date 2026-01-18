@@ -60,6 +60,9 @@ button {
   border: none;
   cursor: pointer;
 }
+button:focus-visible {
+  border: 0.2rem solid #000;
+}
 
 a {
   color: #000;
@@ -72,9 +75,28 @@ html {
 
 html,
 body {
+  font-size: 1.042vw;
   font-family: "NanumBarunGothic", sans-serif;
   font-weight: 400;
-  font-size: 1.042vw;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.inner {
+  margin: 0 auto;
+  width: calc(100% - 8rem);
+}
+
+.highlight {
+  color: #ec008c;
+  font-weight: 700;
 }
 
 .countdown {
@@ -104,32 +126,6 @@ body {
   font-size: 2rem;
   line-height: 2.6rem;
   letter-spacing: 0.02em;
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-}
-
-.inner {
-  margin: 0 auto;
-  width: calc(100% - 8rem);
-}
-
-.highlight {
-  color: #ec008c;
-  font-weight: 700;
-}
-
-main {
-  width: 100%;
-  aspect-ratio: 96/449;
-  background: url("../images/main-bg.jpg") no-repeat center top/100%;
-  position: relative;
 }
 
 .anchor-nav {
@@ -163,6 +159,13 @@ main {
 .anchor-nav .anchor-btn.top {
   background: -webkit-gradient(linear, left top, left bottom, from(#ac52f9), to(#f86d68));
   background: linear-gradient(to bottom, #ac52f9 0%, #f86d68 100%);
+}
+
+main {
+  width: 100%;
+  aspect-ratio: 96/449;
+  background: url("../images/main-bg.jpg") no-repeat center top/100%;
+  position: relative;
 }
 
 .section-1 {
@@ -560,6 +563,29 @@ main {
   color: #fff;
 }
 
+@media (min-width: 961px) {
+  .content {
+    padding: 3rem;
+  }
+  .mission-box {
+    margin-top: 9.5rem;
+  }
+  .event-tit {
+    margin-top: 6.5rem;
+  }
+  .balloon-txt {
+    bottom: 23.5rem;
+  }
+  .new-channel-txt {
+    top: 14.5rem;
+  }
+  .tv-btn {
+    top: 38rem;
+  }
+  .card-box.item3 {
+    margin-top: 36.5rem;
+  }
+}
 @supports (-webkit-touch-callout: none) {
   html,
   body {
