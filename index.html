@@ -5,13 +5,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>컴투스 사전과제</title>
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="컴투스 사전과제">
+  <meta property="og:description" content="타이니팜 공룡 테마 파크 이벤트 - 테마파크 꼬꼬마 드래곤 만나기, 에어바운스 존 오픈">
+  <meta property="og:site_name" content="컴투스 사전과제">
+  <meta property="og:locale" content="ko_KR">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="컴투스 사전과제">
+  <meta name="twitter:description" content="타이니팜 공룡 테마 파크 이벤트 - 테마파크 꼬꼬마 드래곤 만나기, 에어바운스 존 오픈">
+  
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/moonspam/NanumBarunGothic@latest/nanumbarungothicsubset.css">
   <link rel="stylesheet" href="./src/css/main.css">
 </head>
 
 <body>
   <h1 class="sr-only">컴투스 사전과제</h1>
-  <div class="countdown">
+  <div class="countdown" role="timer" aria-live="polite" aria-label="이벤트 종료까지 남은 시간">
     <span class="countdown-date">2026-01-17 00:00 ~ 2026-01-24 00:00 (KST)</span>
     <span class="countdown-time">
       <span class="days">00</span>일 
@@ -21,12 +34,12 @@
     </span>
   </div>
   <main>
-    <nav class="anchor-nav">
-      <a href="javascript:void(0)" class="anchor-btn top">▲</a>
-      <a href="#section-1" class="anchor-btn">1</a>
-      <a href="#section-2" class="anchor-btn">2</a>
-      <a href="#section-event" class="anchor-btn event">★</a>
-      <a href="#section-3" class="anchor-btn">3</a>
+    <nav class="anchor-nav" aria-label="페이지 내비게이션">
+      <a href="javascript:void(0)" class="anchor-btn top" aria-label="페이지 상단으로 이동">▲</a>
+      <a href="#section-1" class="anchor-btn" aria-label="섹션 1로 이동">1</a>
+      <a href="#section-2" class="anchor-btn" aria-label="섹션 2로 이동">2</a>
+      <a href="#section-event" class="anchor-btn event" aria-label="이벤트 섹션으로 이동">★</a>
+      <a href="#section-3" class="anchor-btn" aria-label="섹션 3로 이동">3</a>
     </nav>
     <section class="event-section section-1">
       <div class="inner">
@@ -87,12 +100,12 @@
           </p>
           <div class="item-count">
             <h3 class="count-tit">에어바운스 입장권<br /> 보유수</h3>
-            <div class="count-num"><span>0</span></div>
+            <div class="count-num" role="status" aria-live="polite" aria-label="에어바운스 입장권 보유수"><span>0</span></div>
           </div>
           <div class="mission-box">
             <button class="mission-list" onclick="misstionActive(this)">
               <div class="icon-box">
-                <div class="stamp"></div>
+                <div class="stamp" aria-hidden="true"></div>
                 <p>X<span>5</span></p>
               </div>
               <div class="info-box">
@@ -102,7 +115,7 @@
             </button>
             <button class="mission-list" onclick="misstionActive(this)">
               <div class="icon-box">
-                <div class="stamp zh"></div>
+                <div class="stamp zh" aria-hidden="true"></div>
                 <p>X<span>5</span></p>
               </div>
               <div class="info-box">
@@ -112,7 +125,7 @@
             </button>
             <button class="mission-list" onclick="misstionActive(this)">
               <div class="icon-box">
-                <div class="stamp"></div>
+                <div class="stamp" aria-hidden="true"></div>
                 <p>X<span>5</span></p>
               </div>
               <div class="info-box">
@@ -123,7 +136,7 @@
             </button>
             <button class="mission-list" onclick="misstionActive(this)">
               <div class="icon-box">
-                <div class="stamp"></div>
+                <div class="stamp" aria-hidden="true"></div>
                 <p>X<span>5</span></p>
               </div>
               <div class="info-box">
@@ -133,7 +146,7 @@
             </button>
             <button class="mission-list" onclick="misstionActive(this)">
               <div class="icon-box">
-                <div class="stamp"></div>
+                <div class="stamp" aria-hidden="true"></div>
                 <p>X<span>5</span></p>
               </div>
               <div class="info-box">
@@ -143,7 +156,7 @@
             </button>
             <button class="mission-list" onclick="misstionActive(this)">
               <div class="icon-box">
-                <div class="stamp"></div>
+                <div class="stamp" aria-hidden="true"></div>
                 <p>X<span>5</span></p>
               </div>
               <div class="info-box">
@@ -153,7 +166,7 @@
             </button>
             <button class="mission-list" onclick="misstionActive(this)">
               <div class="icon-box">
-                <div class="stamp"></div>
+                <div class="stamp" aria-hidden="true"></div>
                 <p>X<span>5</span></p>
               </div>
               <div class="info-box">
@@ -163,7 +176,7 @@
             </button>
             <button class="mission-list" onclick="misstionActive(this)">
               <div class="icon-box">
-                <div class="stamp"></div>
+                <div class="stamp" aria-hidden="true"></div>
                 <p>X<span>5</span></p>
               </div>
               <div class="info-box">
@@ -171,16 +184,6 @@
                 <p class="mission-num">(<span class="num">0</span>/<span class="total-num">1</span>)</p>
               </div>
             </button>
-            <!-- <div class="notice-con">
-            <div class="notice-txt">
-              * 테마파크 꼬꼬마 드래곤의 알 에서도 공룡옷 꼬꼬마 펭귄, 공룡옷 아기곰,
-              공룡옷 꼬꼬마 오리를 만날 수 있어요!
-              * 알 마일리지로 획득한 테마파크 꼬꼬마 드래곤은 선착순 조건에 해당 돼요.
-              * 패키지 구매로 획득한 테마파크 꼬꼬마 드래곤은 선착순 조건에 해당되지 않아요.
-              @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-              @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-            </div>
-          </div> -->
           </div>
           <h3 id="section-event" class="event-tit">★추가 이벤트!<br /> 에어바운스존 이용 고객님~선물 받아가세요♥</h3>
           <p class="txt">
@@ -201,13 +204,13 @@
             </div>
           </div>
           <div class="gift-wrap">
-            <button class="gift-list" onclick="misstionActive(this)">X <span>50000</span></button>
-            <button class="gift-list" onclick="misstionActive(this)">X <span>20</span></button>
-            <button class="gift-list" onclick="misstionActive(this)">X <span>3</span></button>
-            <button class="gift-list" onclick="misstionActive(this)">X <span>5</span></button>
-            <button class="gift-list" onclick="misstionActive(this)">X <span>15</span></button>
-            <button class="gift-list" onclick="misstionActive(this)">X <span>1</span></button>
-            <button class="gift-list" onclick="misstionActive(this)"></button>
+            <button class="gift-list" onclick="misstionActive(this)" aria-label="코인50000개">X <span>50000</span></button>
+            <button class="gift-list" onclick="misstionActive(this)" aria-label="하트20개">X <span>20</span></button>
+            <button class="gift-list" onclick="misstionActive(this)" aria-label="왕관3개">X <span>3</span></button>
+            <button class="gift-list" onclick="misstionActive(this)" aria-label="두루마리 5개">X <span>5</span></button>
+            <button class="gift-list" onclick="misstionActive(this)" aria-label="종 15개">X <span>15</span></button>
+            <button class="gift-list" onclick="misstionActive(this)" aria-label="드래곤 알 1개">X <span>1</span></button>
+            <button class="gift-list" onclick="misstionActive(this)" aria-label="테마파크 꼬꼬마 드래곤의 알 장식 1개"></button>
           </div>
           <p class="balloon-txt">테마파크 꼬꼬마 드래곤의 알 장식 x 1</p>
           <div class="notice-con type2">
@@ -242,14 +245,14 @@
             </div>
             <div class="card-list" onclick="misstionActive(this)">
               <h3 class="card-tit">5회 보상</h3>
-              <button class="card-info type-btn">
-                <div class="stamp"></div>
+              <button class="card-info type-btn" aria-label="5회 보상 받기">
+                <div class="stamp" aria-hidden="true"></div>
               </button>
             </div>
             <div class="card-list" onclick="misstionActive(this)">
               <h3 class="card-tit">10회 보상</h3>
-              <button class="card-info type-btn">
-                <div class="stamp zh"></div>
+              <button class="card-info type-btn" aria-label="10회 보상 받기">
+                <div class="stamp zh" aria-hidden="true"></div>
               </button>
             </div>
           </div>
@@ -268,7 +271,7 @@
     </section>
     <div class="footer-notice">
       <p class="footer-txt">
-        # 이벤트 문의 : 컴투스 하이브 1:1 문의 <a class="link-txt" href="https://www.withhive.com" target="_blank">https://www.withhive.com</a><br/>
+        # 이벤트 문의 : 컴투스 하이브 1:1 문의 <a class="link-txt" href="https://www.withhive.com" target="_blank" rel="noopener noreferrer" aria-label="새창열림">https://www.withhive.com</a><br/>
         @@@@@@@@@@@@@@@@@@@@@@@@@@@@
       </p>
     </div>
