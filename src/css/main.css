@@ -169,7 +169,7 @@ main {
 
 .item-count {
   padding: 2rem 0;
-  margin: 4.5rem 0 0 17.5rem;
+  margin: 5rem 0 0 17.5rem;
   width: 21.2rem;
   text-align: center;
 }
@@ -211,9 +211,9 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   width: 10.5rem;
   height: 100%;
   color: #363636;

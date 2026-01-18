@@ -109,7 +109,7 @@ main {
 // section-2 start
 .item-count {
   padding: 2rem 0;
-  margin: 4.5rem 0 0 17.5rem;
+  margin: 5rem 0 0 17.5rem;
   width: 21.2rem;
   text-align: center;
 
@@ -147,7 +147,7 @@ main {
     .icon-box {
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-end;
       width: 10.5rem;
       height: 100%;
       color: $color-gray;
