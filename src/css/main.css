@@ -239,7 +239,7 @@ main {
 }
 .card-box.item3 .card-info .stamp {
   position: relative;
-  display: none;
+  display: block;
   width: 10.3rem;
   aspect-ratio: 1/1;
   background: url("../images/icon-stamp-large-en.png") no-repeat center center/cover;
