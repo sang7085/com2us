@@ -97,12 +97,12 @@ main {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
-  
+
     .card-list {
       margin-top: 0;
       width: 100%;
       height: auto;
-    
+
       &.active {
         .stamp {
           display: block;
@@ -118,6 +118,7 @@ main {
       height: 7rem;
       text-align: center
     }
+
     .card-info {
       display: flex;
       justify-content: center;
@@ -125,13 +126,13 @@ main {
       width: 100%;
       height: 11.5rem;
       color: $color-gray;
-      
+
       .stamp {
         display: none;
         height: 100%;
         aspect-ratio: 1 / 1;
         background: url("../images/icon-stamp-large-en.png") no-repeat center center / cover;
-      
+
         &.zh {
           background: url("../images/icon-stamp-large-zh.png") no-repeat center center / cover;
         }
@@ -200,6 +201,7 @@ main {
       align-items: flex-end;
       width: 10.5rem;
       height: 100%;
+
       .stamp {
         position: absolute;
         top: 50%;
@@ -209,11 +211,12 @@ main {
         width: 8.3rem;
         aspect-ratio: 1 / 1;
         background: url("../images/icon-stamp-en.png") no-repeat center center / cover;
-        
+
         &.zh {
           background: url("../images/icon-stamp-zh.png") no-repeat center center / cover;
         }
       }
+
       p {
         margin-bottom: 1rem;
         @include text-base();
@@ -234,6 +237,7 @@ main {
       @include text-base();
       color: $color-white;
     }
+
     .mission-num {
       @include text-base();
       color: $color-yellow;
@@ -249,7 +253,7 @@ main {
   line-height: 3.6rem;
   color: $color-yellow;
 
-  & + .txt {
+  &+.txt {
     margin-top: 4rem;
   }
 }
@@ -258,13 +262,14 @@ main {
   position: relative;
   margin: 3rem auto 0;
   width: calc(100% - 6rem);
+
   .gauge-progress {
     position: relative;
     height: 7.2rem;
     background: #6e66a4;
     border: 0.3rem solid #5c4fab;
     border-radius: 999px;
-  
+
     .gauge-bar {
       position: absolute;
       top: 0;
@@ -274,7 +279,7 @@ main {
       background: linear-gradient(to right, #3fbbfe, #a541ff);
       border: 0.3rem solid $color-white;
       border-radius: 999px;
-  
+
       &::after {
         content: "";
         position: absolute;
@@ -288,10 +293,11 @@ main {
       }
     }
   }
-  
+
   .gauge-step {
     display: flex;
     margin-top: 1rem;
+
     .step {
       @include text-base();
       width: calc(100% / 7);
@@ -371,8 +377,10 @@ main {
   width: 100%;
   height: 7rem;
   color: #85b5ff;
+
   .footer-txt {
     margin-left: 6rem;
+
     .link-txt {
       color: #85b5ff;
     }
@@ -397,19 +405,25 @@ main {
 
 // 960px 이하
 @supports (-webkit-touch-callout: none) {
+
   html,
   body {
     font-size: 1.064vw;
   }
+
   .badge {
     top: 31rem;
   }
+
   .arrow-txt {
     top: 45.5rem;
   }
+
   .item-count {
     margin: 6rem 0 0 17.5rem;
+  }
+  
+  .event-tit {
+    margin-top: 7rem;
+  }
 }
-}
-// @media (max-width: 960px) {
-// }
