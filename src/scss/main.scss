@@ -10,14 +10,6 @@ body {
   font-size: 1.042vw;
 }
 
-// 960px 이하
-@media (max-width: 960px) {
-  html,
-  body {
-    font-size: 1.06vw;
-  }
-}
-
 // common start
 
 .sr-only {
@@ -211,7 +203,13 @@ main {
 // main end
 
 // 960px 이하
+
+// 960px 이하
 @media (max-width: 960px) {
+  html,
+  body {
+    font-size: 1.062vw;
+  }
   .badge {
     top: 31rem;
   }

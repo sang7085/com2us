@@ -68,12 +68,6 @@ body {
   font-size: 1.042vw;
 }
 
-@media (max-width: 960px) {
-  html,
-  body {
-    font-size: 1.06vw;
-  }
-}
 .sr-only {
   position: absolute;
   width: 1px;
@@ -270,6 +264,10 @@ main {
 }
 
 @media (max-width: 960px) {
+  html,
+  body {
+    font-size: 1.062vw;
+  }
   .badge {
     top: 31rem;
   }
