@@ -61,22 +61,13 @@ button {
   cursor: pointer;
 }
 
-html, body {
+html,
+body {
   font-family: "NanumBarunGothic", sans-serif;
   font-weight: 400;
-  font-size: 1.3037809648vw;
+  font-size: 1.042vw;
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
-  html, body {
-    font-size: 0.9765625vw;
-  }
-}
-@media (min-width: 1024px) {
-  html, body {
-    font-size: 0.5208333333vw;
-  }
-}
 .sr-only {
   position: absolute;
   width: 1px;
@@ -98,7 +89,7 @@ html, body {
 
 main {
   width: 100%;
-  aspect-ratio: 96/449;
+  height: 449rem;
   background: url("../images/main-bg.jpg") no-repeat center top/cover;
 }
 
@@ -214,8 +205,18 @@ main {
   height: 10.5rem;
 }
 .mission-box .mission-list .icon-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 10.5rem;
   height: 100%;
+  color: #363636;
 }
 .mission-box .mission-list .info-box {
   display: -webkit-box;

@@ -3,12 +3,12 @@
 @import 'base/mixins';
 
 // 960px 이상
-// html,
-// body {
-//   font-family: 'NanumBarunGothic', sans-serif;
-//   font-size: 1.042vw;
-//   font-weight: 400;
-// }
+html,
+body {
+  font-family: 'NanumBarunGothic', sans-serif;
+  font-weight: 400;
+  font-size: 1.042vw;
+}
 
 // @media (max-width: 960px) {
 //   html,
@@ -17,25 +17,26 @@
 //   }
 // }
 
-html, body {
-  font-family: 'NanumBarunGothic', sans-serif;
-  font-weight: 400;
-  font-size: calc(100vw * 10 / 767);
-}
+// 모바일 (767px 이하)
+// html, body {
+//   font-size: calc(100vw * 10 / 767);
+//   font-family: 'NanumBarunGothic', sans-serif;
+//   font-weight: 400;
+// }
 
+// // 태블릿 (768px ~ 1023px)
+// @media (min-width: 768px) {
+//   html, body {
+//     font-size: calc(100vw * 10 / 1024);
+//   }
+// }
 
-@media (min-width: 768px) and (max-width: 1023px) {
-  html, body {
-    font-size: calc(100vw * 10 / 1024);
-  }
-}
-
-@media (min-width: 1024px) {
-  html, body {
-    font-size: calc(100vw * 10 / 1920);
-  }
-}
-
+// // 데스크톱 (1024px 이상)
+// @media (min-width: 1024px) {
+//   html, body {
+//     font-size: calc(100vw * 10 / 1920);
+//   }
+// }
 
 // common start
 
@@ -64,7 +65,8 @@ html, body {
 
 main {
   width: 100%;
-  aspect-ratio: 96 / 449;
+  height: 449rem;
+  // aspect-ratio: 96 / 449;
   background: url('../images/main-bg.jpg') no-repeat center top / cover;
   
 }
@@ -169,8 +171,12 @@ main {
     }
 
     .icon-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 10.5rem;
       height: 100%;
+      color: $color-gray;
     }
 
     .info-box {
