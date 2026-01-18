@@ -99,7 +99,6 @@ main {
     height: 8rem;
     text-align: center;
     color: $color-white;
-    border: 1px solid red;
   }
 
   .card-tit {
@@ -205,15 +204,15 @@ main {
 // 960px 이하
 
 // 960px 이하
-@media (max-width: 960px) {
-  html,
-  body {
-    font-size: 1.064vw;
-  }
-  .badge {
-    top: 31rem;
-  }
-  .arrow-txt {
-    top: 45.5rem;
-  }
-}
+// @media (max-width: 960px) {
+//   html,
+//   body {
+//     font-size: 1.064vw;
+//   }
+//   .badge {
+//     top: 31rem;
+//   }
+//   .arrow-txt {
+//     top: 45.5rem;
+//   }
+// }
