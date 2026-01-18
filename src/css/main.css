@@ -66,6 +66,10 @@ a {
   text-decoration: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   font-family: "NanumBarunGothic", sans-serif;
@@ -97,6 +101,39 @@ main {
   aspect-ratio: 96/449;
   background: url("../images/main-bg.jpg") no-repeat center top/100%;
   position: relative;
+}
+
+.anchor-nav {
+  position: fixed;
+  top: 8rem;
+  right: 0;
+  z-index: 1000;
+}
+.anchor-nav .anchor-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 1rem;
+  width: 5rem;
+  height: 5rem;
+  border: 0.3rem solid #fff;
+  font-weight: 700;
+  font-size: 2.1rem;
+  color: #fff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#c350fe), to(#3060dd));
+  background: linear-gradient(to bottom, #c350fe 0%, #3060dd 100%);
+  -webkit-box-shadow: 0.4rem 0 0.4rem rgba(0, 0, 0, 0.45);
+          box-shadow: 0.4rem 0 0.4rem rgba(0, 0, 0, 0.45);
+}
+.anchor-nav .anchor-btn.top {
+  background: -webkit-gradient(linear, left top, left bottom, from(#ac52f9), to(#f86d68));
+  background: linear-gradient(to bottom, #ac52f9 0%, #f86d68 100%);
 }
 
 .section-1 {
@@ -171,7 +208,6 @@ main {
 }
 .card-box.item3 .card-list.active .card-info .stamp {
   display: block !important;
-  border: 1px solid red;
 }
 .card-box.item3 .card-tit {
   padding: 0;
@@ -260,7 +296,6 @@ main {
       -ms-flex-align: center;
           align-items: center;
   height: 10.3rem;
-  border: 1px solid red;
 }
 .mission-box .mission-list.active .icon-box .stamp {
   display: block;
