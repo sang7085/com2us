@@ -77,6 +77,41 @@ body {
   font-size: 1.042vw;
 }
 
+.countdown {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  z-index: 1000;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 0.8rem;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.5rem;
+}
+.countdown .countdown-label {
+  font-size: 1.2rem;
+  color: #ffff6b;
+}
+.countdown .countdown-time {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.5rem;
+}
+.countdown .countdown-time span {
+  min-width: 2.5rem;
+  text-align: center;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -239,14 +274,14 @@ main {
 }
 .card-box.item3 .card-info .stamp {
   position: relative;
-  display: block;
+  display: block !important;
   width: 10.3rem;
   border: 1px solid red;
   aspect-ratio: 1/1;
-  background: url("../images/icon-stamp-large-en.png") no-repeat center center/cover;
+  background: url("../images/icon-stamp-en.png") no-repeat center center/cover;
 }
 .card-box.item3 .card-info .stamp.zh {
-  background: url("../images/icon-stamp-large-zh.png") no-repeat center center/cover;
+  background: url("../images/icon-stamp-zh.png") no-repeat center center/cover;
 }
 .card-box .card-list {
   font-size: 2rem;

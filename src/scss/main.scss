@@ -16,6 +16,37 @@ body {
 
 // common start
 
+.countdown {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  z-index: 1000;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 0.8rem;
+  color: $color-white;
+  font-size: 1.4rem;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  
+  .countdown-label {
+    font-size: 1.2rem;
+    color: $color-yellow;
+  }
+  
+  .countdown-time {
+    display: flex;
+    gap: 0.5rem;
+    
+    span {
+      min-width: 2.5rem;
+      text-align: center;
+    }
+  }
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -161,14 +192,14 @@ main {
 
       .stamp {
         position: relative;
-        display: block;
+        display: block !important;
         width: 10.3rem;
         border: 1px solid red;
         aspect-ratio: 1 / 1;
-        background: url("../images/icon-stamp-large-en.png") no-repeat center center / cover;
+        background: url("../images/icon-stamp-en.png") no-repeat center center / cover;
 
         &.zh {
-          background: url("../images/icon-stamp-large-zh.png") no-repeat center center / cover;
+          background: url("../images/icon-stamp-zh.png") no-repeat center center / cover;
         }
       }
     }
