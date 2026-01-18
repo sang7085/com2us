@@ -97,6 +97,7 @@ main {
 .section-1 {
   padding-top: 40rem;
   width: 100%;
+  border: 1px solid red;
 }
 
 .section-tit {
