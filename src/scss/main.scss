@@ -104,8 +104,11 @@ main {
       height: auto;
 
       &.active {
-        .stamp {
-          display: block;
+        .card-info {
+          .stamp {
+            display: block;
+            border: 1px solid red;
+          }
         }
       }
     }

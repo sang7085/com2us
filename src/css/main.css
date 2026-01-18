@@ -169,8 +169,9 @@ main {
   width: 100%;
   height: auto;
 }
-.card-box.item3 .card-list.active .stamp {
+.card-box.item3 .card-list.active .card-info .stamp {
   display: block;
+  border: 1px solid red;
 }
 .card-box.item3 .card-tit {
   padding: 0;
