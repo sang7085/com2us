@@ -27,15 +27,6 @@ function startCountdown() {
     function updateCountdown() {
         const now = new Date().getTime();
         const distance = endTime - now;
-        
-        if (distance < 0) {
-            $days.textContent = '00';
-            $hours.textContent = '00';
-            $minutes.textContent = '00';
-            $seconds.textContent = '00';
-            return;
-        }
-        
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
