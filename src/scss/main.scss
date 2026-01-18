@@ -203,17 +203,17 @@ main {
 
 // 960px 이하
 @media (max-width: 960px) {
-
   @supports (-webkit-touch-callout: none) {
     html,
     body {
       font-size: 1.064vw;
     }
   }
-  .badge {
-    top: 31rem;
-  }
-  .arrow-txt {
-    top: 45.5rem;
-  }
+
+  // .badge {
+  //   top: 31rem;
+  // }
+  // .arrow-txt {
+  //   top: 45.5rem;
+  // }
 }
