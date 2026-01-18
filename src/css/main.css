@@ -225,7 +225,7 @@ main {
   width: 100%;
 }
 .card-box.item3 {
-  margin-top: 36.5rem;
+  margin-top: 35.5rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
@@ -280,7 +280,7 @@ main {
   font-size: 2rem;
   line-height: 2.6rem;
   letter-spacing: 0.02em;
-  margin-top: 26.5rem;
+  margin-top: 27rem;
   width: 50%;
   height: 8rem;
   text-align: center;
@@ -292,7 +292,7 @@ main {
 
 .item-count {
   padding: 2rem 0;
-  margin: 5rem 0 0 17.5rem;
+  margin: 4rem 0 0 17.5rem;
   width: 21.2rem;
   text-align: center;
 }
@@ -310,7 +310,7 @@ main {
 
 .mission-box {
   padding: 0 3rem;
-  margin-top: 9.5rem;
+  margin-top: 10rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
@@ -499,7 +499,7 @@ main {
   line-height: 2.6rem;
   letter-spacing: 0.02em;
   position: absolute;
-  top: 14rem;
+  top: 13.5rem;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -517,7 +517,7 @@ main {
   letter-spacing: 0.02em;
   position: absolute;
   left: 37rem;
-  top: 38rem;
+  top: 37.5rem;
   font-weight: 700;
   color: #363636;
 }
@@ -549,6 +549,10 @@ main {
   margin-top: 3rem;
   padding: 4rem 3rem;
 }
+.notice-con.type2 {
+  padding: 3rem;
+  margin-top: 3.5rem;
+}
 .notice-con .notice-txt {
   font-size: 2rem;
   line-height: 2.6rem;
@@ -568,12 +572,20 @@ main {
     top: 45.5rem;
   }
   .item-count {
-    margin: 6rem 0 0 17.5rem;
+    margin: 5.5rem 0 0 17.5rem;
   }
   .event-tit {
     margin-top: 7rem;
   }
   .mission-box {
+    margin-top: 9.5rem;
     gap: 1.4rem;
+  }
+  .balloon-txt {
+    bottom: 25rem;
+    right: 12rem;
+  }
+  .card-box .card-list {
+    margin-top: 26.5rem;
   }
 }/*# sourceMappingURL=main.css.map */

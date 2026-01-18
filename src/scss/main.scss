@@ -143,7 +143,7 @@ main {
   width: 100%;
 
   &.item3 {
-    margin-top: 36.5rem;
+    margin-top: 35.5rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
@@ -195,7 +195,7 @@ main {
 
   .card-list {
     @include text-base();
-    margin-top: 26.5rem;
+    margin-top: 27rem;
     width: 50%;
     height: 8rem;
     text-align: center;
@@ -210,7 +210,7 @@ main {
 // section-2 start
 .item-count {
   padding: 2rem 0;
-  margin: 5rem 0 0 17.5rem;
+  margin: 4rem 0 0 17.5rem;
   width: 21.2rem;
   text-align: center;
 
@@ -228,7 +228,7 @@ main {
 
 .mission-box {
   padding: 0 3rem;
-  margin-top: 9.5rem;
+  margin-top: 10rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
@@ -399,7 +399,7 @@ main {
 .new-channel-txt {
   @include text-base();
   position: absolute;
-  top: 14rem;
+  top: 13.5rem;
   left: 50%;
   transform: translateX(-50%);
   font-weight: 700;
@@ -414,7 +414,7 @@ main {
   @include text-base();
   position: absolute;
   left: 37rem;
-  top: 38rem;
+  top: 37.5rem;
   font-weight: 700;
   color: $color-gray;
 }
@@ -447,6 +447,11 @@ main {
   margin-top: 3rem;
   padding: 4rem 3rem;
 
+  &.type2 {
+    padding: 3rem;
+    margin-top: 3.5rem; 
+  }
+
   .notice-txt {
     @include text-base();
     color: $color-white;
@@ -471,7 +476,7 @@ main {
   }
 
   .item-count {
-    margin: 6rem 0 0 17.5rem;
+    margin: 5.5rem 0 0 17.5rem;
   }
   
   .event-tit {
@@ -479,6 +484,18 @@ main {
   }
 
   .mission-box {
+    margin-top: 9.5rem;
     gap: 1.4rem;
+  }
+
+  .balloon-txt {
+    bottom: 25rem;
+    right: 12rem;
+  }
+
+  .card-box {
+    .card-list {
+      margin-top: 26.5rem;
+    }
   }
 }
