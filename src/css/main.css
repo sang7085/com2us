@@ -582,8 +582,11 @@ main {
     gap: 1.4rem;
   }
   .balloon-txt {
-    bottom: 24rem;
+    bottom: 23.5rem;
     right: 12rem;
+  }
+  .card-box.item3 {
+    margin-top: 36rem;
   }
   .card-box .card-list {
     margin-top: 26.5rem;
