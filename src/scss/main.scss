@@ -203,9 +203,12 @@ main {
 
 // 960px 이하
 @media (max-width: 960px) {
-  html,
-  body {
-    font-size: 1.064vw;
+
+  @supports (-webkit-touch-callout: none) {
+    html,
+    body {
+      font-size: 1.064vw;
+    }
   }
   .badge {
     top: 31rem;
