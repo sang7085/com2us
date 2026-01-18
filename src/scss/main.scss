@@ -150,7 +150,11 @@ main {
       align-items: flex-end;
       width: 10.5rem;
       height: 100%;
-      color: $color-gray;
+      p {
+        margin-bottom: 1.5rem;
+        font-size: 2rem;
+        color: $color-gray;
+      }
     }
 
     .info-box {
@@ -166,16 +170,57 @@ main {
       @include text-base();
       color: $color-white;
     }
+    .mission-num {
+      @include text-base();
+      color: $color-yellow;
+    }
   }
+}
 
-  .mission-num {
-    @include text-base();
-    color: $color-yellow;
+.event-tit {
+  @include text-base();
+  margin-top: 7rem;
+  text-align: center;
+  font-size: 2.8rem;
+  line-height: 3.6rem;
+  color: $color-yellow;
+
+  & + .txt {
+    margin-top: 5rem;
   }
+}
 
-  .num {}
+.gauge-wrap {
+  position: relative;
+  margin: 3rem auto 0;
+  width: calc(100% - 6rem);
+  height: 7.2rem;
+  background: #6e66a4;
+  border: 3px solid #5c4fab;
+  border-radius: 3rem;
 
-  .total-num {}
+  .gauge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 100%;
+    background: linear-gradient(to right, #3fbbfe, #a541ff);
+    border: 3px solid $color-white;
+    border-radius: 3rem;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -3.6rem;
+      transform: translateY(-50%);
+      display: block;
+      width: 7.2rem;
+      height: 7.2rem;
+      background: url("../images/img-gauge-penguin.png") no-repeat 0 / cover;
+    }
+  }
 }
 
 // section-2 end
@@ -202,14 +247,11 @@ main {
 // main end
 
 // 960px 이하
-@media (max-width: 960px) {
-  @supports (-webkit-touch-callout: none) {
-    html,
-    body {
-      font-size: 1.064vw;
-    }
+@supports (-webkit-touch-callout: none) {
+  html,
+  body {
+    font-size: 1.064vw;
   }
-
   .badge {
     top: 31rem;
   }
@@ -217,3 +259,5 @@ main {
     top: 45.5rem;
   }
 }
+// @media (max-width: 960px) {
+// }

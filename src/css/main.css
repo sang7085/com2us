@@ -216,6 +216,10 @@ main {
           align-items: flex-end;
   width: 10.5rem;
   height: 100%;
+}
+.mission-box .mission-list .icon-box p {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
   color: #363636;
 }
 .mission-box .mission-list .info-box {
@@ -241,12 +245,60 @@ main {
   letter-spacing: 0.02em;
   color: #fff;
 }
-.mission-box .mission-num {
+.mission-box .mission-list .mission-num {
   font-size: 2rem;
   line-height: 2.6rem;
   letter-spacing: 0.02em;
   color: #ffff6b;
 }
+
+.event-tit {
+  font-size: 2rem;
+  line-height: 2.6rem;
+  letter-spacing: 0.02em;
+  margin-top: 7rem;
+  text-align: center;
+  font-size: 2.8rem;
+  line-height: 3.6rem;
+  color: #ffff6b;
+}
+.event-tit + .txt {
+  margin-top: 5rem;
+}
+
+.gauge-wrap {
+  position: relative;
+  margin: 3rem auto 0;
+  width: calc(100% - 6rem);
+  height: 7.2rem;
+  background: #6e66a4;
+  border: 3px solid #5c4fab;
+  border-radius: 3rem;
+}
+.gauge-wrap .gauge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, right top, from(#3fbbfe), to(#a541ff));
+  background: linear-gradient(to right, #3fbbfe, #a541ff);
+  border: 3px solid #fff;
+  border-radius: 3rem;
+}
+.gauge-wrap .gauge::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -3.6rem;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  display: block;
+  width: 7.2rem;
+  height: 7.2rem;
+  background: url("../images/img-gauge-penguin.png") no-repeat 0/cover;
+}
+
 .shadow {
   text-shadow: 0 0.3rem 0 rgba(0, 0, 0, 0.55);
 }
@@ -262,12 +314,10 @@ main {
   color: #fff;
 }
 
-@media (max-width: 960px) {
-  @supports (-webkit-touch-callout: none) {
-    html,
-    body {
-      font-size: 1.064vw;
-    }
+@supports (-webkit-touch-callout: none) {
+  html,
+  body {
+    font-size: 1.064vw;
   }
   .badge {
     top: 31rem;
