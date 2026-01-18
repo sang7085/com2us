@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (targetSection) {
                 const sectionTop = targetSection.getBoundingClientRect().top;
-                const offsetPosition = sectionTop + window.pageYOffset + 50;
+                const offsetPosition = sectionTop + window.pageYOffset - 50;
                 
                 window.scrollTo({
                     top: offsetPosition,
