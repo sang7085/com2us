@@ -92,6 +92,53 @@ main {
   margin-top: 2rem;
   width: 100%;
 
+  &.item3 {
+    margin-top: 36.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  
+    .card-list {
+      margin-top: 0;
+      width: 100%;
+      height: auto;
+    
+      &.active {
+        .stamp {
+          display: block;
+        }
+      }
+    }
+
+    .card-tit {
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 7rem;
+      text-align: center
+    }
+    .card-info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 11.5rem;
+      color: $color-gray;
+      
+      .stamp {
+        display: none;
+        height: 100%;
+        aspect-ratio: 1 / 1;
+        background: url("../images/icon-stamp-large-en.png") no-repeat center center / cover;
+      
+        &.zh {
+          background: url("../images/icon-stamp-large-zh.png") no-repeat center center / cover;
+        }
+      }
+    }
+  }
+
   .card-list {
     @include text-base();
     margin-top: 26.5rem;
@@ -136,23 +183,40 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 10.5rem;
+    height: 10.3rem;
 
     &.active {
       .icon-box {
-        background: url("../images/icon-stamp-en.png") no-repeat center center / 8.3rem;
+        .stamp {
+          display: block;
+        }
       }
     }
 
     .icon-box {
+      position: relative;
       display: flex;
       justify-content: center;
       align-items: flex-end;
       width: 10.5rem;
       height: 100%;
+      .stamp {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+        width: 8.3rem;
+        aspect-ratio: 1 / 1;
+        background: url("../images/icon-stamp-en.png") no-repeat center center / cover;
+        
+        &.zh {
+          background: url("../images/icon-stamp-zh.png") no-repeat center center / cover;
+        }
+      }
       p {
-        margin-bottom: 1.5rem;
-        font-size: 2rem;
+        margin-bottom: 1rem;
+        @include text-base();
         color: $color-gray;
       }
     }
@@ -179,7 +243,7 @@ main {
 
 .event-tit {
   @include text-base();
-  margin-top: 7rem;
+  margin-top: 7.5rem;
   text-align: center;
   font-size: 2.8rem;
   line-height: 3.6rem;
@@ -231,7 +295,6 @@ main {
     .step {
       @include text-base();
       width: calc(100% / 7);
-      font-size: 2rem;
       font-weight: 700;
       text-align: right;
       color: $color-gray;
@@ -249,7 +312,7 @@ main {
     padding: 10rem 0 0rem;
     width: calc((100% - 0.8rem * 6) / 7);
     height: 13.8rem;
-    font-size: 2rem;
+    @include text-base();
     text-align: center;
     color: $color-gray;
 
@@ -274,8 +337,46 @@ main {
 // section-2 end
 
 // section-3 start
+
+.new-channel-txt {
+  @include text-base();
+  position: absolute;
+  top: 14rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 700;
+  color: $color-white;
+}
+
 .shadow {
   text-shadow: 0 0.3rem 0 rgba(0, 0, 0, 0.55);
+}
+
+.tv-btn {
+  @include text-base();
+  position: absolute;
+  left: 37rem;
+  top: 38rem;
+  font-weight: 700;
+  color: $color-gray;
+}
+
+.footer-notice {
+  @include text-base();
+  position: absolute;
+  bottom: 0;
+  padding: 1rem 0;
+  display: flex;
+  align-content: center;
+  width: 100%;
+  height: 7rem;
+  color: #85b5ff;
+  .footer-txt {
+    margin-left: 6rem;
+    .link-txt {
+      color: #85b5ff;
+    }
+  }
 }
 
 // section-3 end

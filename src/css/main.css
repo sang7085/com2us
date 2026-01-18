@@ -61,6 +61,11 @@ button {
   cursor: pointer;
 }
 
+a {
+  color: #000;
+  text-decoration: none;
+}
+
 html,
 body {
   font-family: "NanumBarunGothic", sans-serif;
@@ -153,6 +158,57 @@ main {
   margin-top: 2rem;
   width: 100%;
 }
+.card-box.item3 {
+  margin-top: 36.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+.card-box.item3 .card-list {
+  margin-top: 0;
+  width: 100%;
+  height: auto;
+}
+.card-box.item3 .card-list.active .stamp {
+  display: block;
+}
+.card-box.item3 .card-tit {
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 7rem;
+  text-align: center;
+}
+.card-box.item3 .card-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 11.5rem;
+  color: #363636;
+}
+.card-box.item3 .card-info .stamp {
+  display: none;
+  height: 100%;
+  aspect-ratio: 1/1;
+  background: url("../images/icon-stamp-large-en.png") no-repeat center center/cover;
+}
+.card-box.item3 .card-info .stamp.zh {
+  background: url("../images/icon-stamp-large-zh.png") no-repeat center center/cover;
+}
 .card-box .card-list {
   font-size: 2rem;
   line-height: 2.6rem;
@@ -202,12 +258,13 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 10.5rem;
+  height: 10.3rem;
 }
-.mission-box .mission-list.active .icon-box {
-  background: url("../images/icon-stamp-en.png") no-repeat center center/8.3rem;
+.mission-box .mission-list.active .icon-box .stamp {
+  display: block;
 }
 .mission-box .mission-list .icon-box {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -220,9 +277,25 @@ main {
   width: 10.5rem;
   height: 100%;
 }
+.mission-box .mission-list .icon-box .stamp {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: none;
+  width: 8.3rem;
+  aspect-ratio: 1/1;
+  background: url("../images/icon-stamp-en.png") no-repeat center center/cover;
+}
+.mission-box .mission-list .icon-box .stamp.zh {
+  background: url("../images/icon-stamp-zh.png") no-repeat center center/cover;
+}
 .mission-box .mission-list .icon-box p {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   font-size: 2rem;
+  line-height: 2.6rem;
+  letter-spacing: 0.02em;
   color: #363636;
 }
 .mission-box .mission-list .info-box {
@@ -259,7 +332,7 @@ main {
   font-size: 2rem;
   line-height: 2.6rem;
   letter-spacing: 0.02em;
-  margin-top: 7rem;
+  margin-top: 7.5rem;
   text-align: center;
   font-size: 2.8rem;
   line-height: 3.6rem;
@@ -315,7 +388,6 @@ main {
   line-height: 2.6rem;
   letter-spacing: 0.02em;
   width: 14.2857142857%;
-  font-size: 2rem;
   font-weight: 700;
   text-align: right;
   color: #363636;
@@ -334,6 +406,8 @@ main {
   width: calc((100% - 4.8rem) / 7);
   height: 13.8rem;
   font-size: 2rem;
+  line-height: 2.6rem;
+  letter-spacing: 0.02em;
   text-align: center;
   color: #363636;
 }
@@ -353,8 +427,55 @@ main {
   color: #ec008c;
 }
 
+.new-channel-txt {
+  font-size: 2rem;
+  line-height: 2.6rem;
+  letter-spacing: 0.02em;
+  position: absolute;
+  top: 14rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-weight: 700;
+  color: #fff;
+}
+
 .shadow {
   text-shadow: 0 0.3rem 0 rgba(0, 0, 0, 0.55);
+}
+
+.tv-btn {
+  font-size: 2rem;
+  line-height: 2.6rem;
+  letter-spacing: 0.02em;
+  position: absolute;
+  left: 37rem;
+  top: 38rem;
+  font-weight: 700;
+  color: #363636;
+}
+
+.footer-notice {
+  font-size: 2rem;
+  line-height: 2.6rem;
+  letter-spacing: 0.02em;
+  position: absolute;
+  bottom: 0;
+  padding: 1rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  width: 100%;
+  height: 7rem;
+  color: #85b5ff;
+}
+.footer-notice .footer-txt {
+  margin-left: 6rem;
+}
+.footer-notice .footer-txt .link-txt {
+  color: #85b5ff;
 }
 
 .notice-con {
