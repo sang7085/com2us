@@ -2,10 +2,6 @@
 @import 'base/variables';
 @import 'base/mixins';
 
-html {
-  scroll-behavior: smooth;
-}
-
 html,
 body {
   font-size: 1.042vw;
@@ -76,6 +72,10 @@ body {
     
     &.top {
       background: linear-gradient(to bottom, #ac52f9 0%, #f86d68 100%);
+    }
+
+    &:focus-visible {
+      outline: 0.3rem solid #fff;
     }
   }
 }
@@ -255,10 +255,7 @@ main {
       height: 100%;
 
       .stamp {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        @include absolute-center();
         display: none;
         width: 8.3rem;
         aspect-ratio: 1 / 1;
@@ -529,5 +526,11 @@ main {
     .card-list {
       margin-top: 26.5rem;
     }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }

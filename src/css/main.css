@@ -69,10 +69,6 @@ a {
   text-decoration: none;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 html,
 body {
   font-size: 1.042vw;
@@ -159,6 +155,9 @@ body {
 .anchor-nav .anchor-btn.top {
   background: -webkit-gradient(linear, left top, left bottom, from(#ac52f9), to(#f86d68));
   background: linear-gradient(to bottom, #ac52f9 0%, #f86d68 100%);
+}
+.anchor-nav .anchor-btn:focus-visible {
+  outline: 0.3rem solid #fff;
 }
 
 main {
@@ -616,5 +615,10 @@ main {
   }
   .card-box .card-list {
     margin-top: 26.5rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }/*# sourceMappingURL=main.css.map */

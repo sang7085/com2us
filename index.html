@@ -34,8 +34,9 @@
     </span>
   </div>
   <main>
+    <div id="top"></div>
     <nav class="anchor-nav" aria-label="페이지 내비게이션">
-      <a href="javascript:void(0)" class="anchor-btn top" aria-label="페이지 상단으로 이동">▲</a>
+      <a href="#top" class="anchor-btn top" aria-label="페이지 상단으로 이동">▲</a>
       <a href="#section-1" class="anchor-btn" aria-label="섹션 1로 이동">1</a>
       <a href="#section-2" class="anchor-btn" aria-label="섹션 2로 이동">2</a>
       <a href="#section-event" class="anchor-btn event" aria-label="이벤트 섹션으로 이동">★</a>
@@ -243,18 +244,18 @@
                 <p><span class="highlight">@@</span>회</p>
               </div>
             </div>
-            <div class="card-list" onclick="misstionActive(this)">
+            <button class="card-list" onclick="misstionActive(this)">
               <h3 class="card-tit">5회 보상</h3>
-              <button class="card-info type-btn" aria-label="5회 보상 받기">
+              <div class="card-info type-btn" aria-label="5회 보상 받기">
                 <div class="stamp" aria-hidden="true"></div>
-              </button>
-            </div>
-            <div class="card-list" onclick="misstionActive(this)">
+              </div>
+            </button>
+            <button class="card-list" onclick="misstionActive(this)">
               <h3 class="card-tit">10회 보상</h3>
-              <button class="card-info type-btn" aria-label="10회 보상 받기">
+              <div class="card-info type-btn" aria-label="10회 보상 받기">
                 <div class="stamp zh" aria-hidden="true"></div>
-              </button>
-            </div>
+              </div>
+            </button>
           </div>
           <div class="notice-con">
             <div class="notice-txt">
