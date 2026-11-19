@@ -26,6 +26,11 @@
         font-display: swap;
       }
 
+      :root {
+        /* 브라우저 760px 이상: 1px 고정 / 760px 미만: 브라우저 폭에 비례해 축소 */
+        --760: min(1px, calc(100vw / 760));
+      }
+
       body {
         margin: 0;
         display: grid;
@@ -37,8 +42,8 @@
 
       .stage_wrap {
         position: relative;
-        width: 704px;
-        height: 704px;
+        width: calc(704 * var(--760));
+        aspect-ratio: 1 / 1;
         box-sizing: border-box;
         border-radius: 50%;
         overflow: hidden;
@@ -46,8 +51,9 @@
       }
 
       #stage {
+        position: relative;
         width: 100%;
-        height: 585px;
+        aspect-ratio: 704 / 585;
       }
 
       /* ===== 구슬 공통 ===== */
@@ -84,78 +90,77 @@
 
       /* ===== large ===== */
       .ball.large {
-        width: 180px;
-        height: 180px;
+        width: calc(180 * var(--760));
+        height: calc(180 * var(--760));
         color: #954a4e;
         background: url("./images/event/20261127/lotto_ball01.png") no-repeat 0 / cover;
       }
       .ball.large .ball_tit {
-        top: 146px;
-        font-size: 20px;
+        top: calc(146 * var(--760));
+        font-size: calc(20 * var(--760));
       }
       .ball.large .ball_text {
-        top: 52px;
+        top: calc(52 * var(--760));
       }
       .ball.large .ball_text span:first-child {
-        font-size: 46px;
+        font-size: calc(46 * var(--760));
       }
       .ball.large .ball_text span:last-child {
-        font-size: 43px;
+        font-size: calc(43 * var(--760));
       }
 
       /* ===== medium ===== */
       .ball.medium {
-        width: 150px;
-        height: 150px;
+        width: calc(150 * var(--760));
+        height: calc(150 * var(--760));
         color: #98501c;
         background: url("./images/event/20261127/lotto_ball02.png") no-repeat 0 / cover;
       }
       .ball.medium .ball_tit {
-        top: 110px;
-        font-size: 16px;
+        top: calc(110 * var(--760));
+        font-size: calc(16 * var(--760));
       }
       .ball.medium .ball_text {
-        top: 38px;
+        top: calc(38 * var(--760));
       }
       .ball.medium .ball_text span:first-child {
-        font-size: 37px;
+        font-size: calc(37 * var(--760));
       }
       .ball.medium .ball_text span:last-child {
-        font-size: 35px;
+        font-size: calc(35 * var(--760));
       }
 
       /* ===== regular ===== */
       .ball.regular {
-        width: 120px;
-        height: 120px;
+        width: calc(120 * var(--760));
+        height: calc(120 * var(--760));
         color: #007343;
         background: url("./images/event/20261127/lotto_ball03.png") no-repeat 0 / cover;
       }
       .ball.regular .ball_tit {
-        top: 88px;
-        font-size: 13px;
+        top: calc(88 * var(--760));
+        font-size: calc(13 * var(--760));
       }
       .ball.regular .ball_text {
-        top: 30px;
+        top: calc(30 * var(--760));
       }
       .ball.regular .ball_text span:first-child {
-        font-size: 30px;
+        font-size: calc(30 * var(--760));
       }
       .ball.regular .ball_text span:last-child {
-        font-size: 28px;
+        font-size: calc(28 * var(--760));
       }
 
       /* ===== empty ===== */
       .ball.empty {
-        width: 120px;
-        height: 120px;
+        width: calc(120 * var(--760));
+        height: calc(120 * var(--760));
         color: #007343;
         background: url("./images/event/20261127/lotto_ball_empty.png") no-repeat 0 / cover;
       }
-
       .ball.empty .ball_tit {
-        top: 88px;
-        font-size: 13px;
+        top: calc(88 * var(--760));
+        font-size: calc(13 * var(--760));
       }
     </style>
   </head>
@@ -163,17 +168,17 @@
     <div class="stage_wrap">
       <div id="stage">
         <!--
-            [개발 참고]
-            - 구슬 9개가 마크업에 고정되어 있습니다. 개수/종류는 이 HTML에서 관리합니다.
-            - 종류는 클래스로 구분: .large / .medium / .regular
-            - 값 주입 자리 (.text()로 넣을 것, .html() 사용 금지):
-                .ball_text 첫 번째 span = 값 (예: 2100)
-                .ball_text 두 번째 span = 단위 (예: 개)
-                .ball_tit 안의 span     = 제목 (예: 모은 초코칩)
-            - 아래 텍스트는 퍼블 확인용 샘플입니다.
-          -->
+          [개발 참고]
+          - 구슬은 마크업에 고정되어 있습니다. 개수/종류는 이 HTML에서 관리합니다.
+          - 종류는 클래스로 구분: .large / .medium / .regular / .empty
+          - 값 주입 자리 (.text()로 넣을 것, .html() 사용 금지):
+              .ball_text 첫 번째 span = 값 (예: 2100)
+              .ball_text 두 번째 span = 단위 (예: 개)
+              .ball_tit 안의 span     = 제목 (예: 모은 초코칩)
+          - 아래 텍스트는 퍼블 확인용 샘플입니다.
+        -->
 
-        <!-- large x3 -->
+        <!-- large x9 (테스트용) -->
         <div class="ball large">
           <div class="text_wrap">
             <p class="ball_text"><span>2100</span><span>개</span></p>
@@ -192,7 +197,6 @@
             <p class="ball_tit"><span>열공 순위</span></p>
           </div>
         </div>
-
         <div class="ball large">
           <div class="text_wrap">
             <p class="ball_text"><span>2100</span><span>개</span></p>
@@ -211,7 +215,6 @@
             <p class="ball_tit"><span>열공 순위</span></p>
           </div>
         </div>
-
         <div class="ball large">
           <div class="text_wrap">
             <p class="ball_text"><span>2100</span><span>개</span></p>
@@ -251,7 +254,7 @@
           </div>
         </div> -->
 
-        <!-- regular x2 -->
+        <!-- regular x2 + empty x1 -->
         <!-- <div class="ball regular">
           <div class="text_wrap">
             <p class="ball_text"><span>7</span><span>위</span></p>
@@ -264,7 +267,6 @@
             <p class="ball_tit"><span>열공한 요일</span></p>
           </div>
         </div>
-
         <div class="ball empty">
           <div class="text_wrap">
             <p class="ball_tit"><span>열공 출석부</span></p>
@@ -277,7 +279,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
     <script>
       $(function () {
-        const { Engine, Runner, Bodies, Body, Composite, Events, Mouse, MouseConstraint } = Matter;
+        const { Engine, Runner, Bodies, Body, Composite, Events } = Matter;
 
         const $stage = $("#stage");
         const stageEl = $stage[0];
@@ -290,7 +292,7 @@
         let H = stageEl.clientHeight;
         let walls = [];
 
-        // ===== 원형 벽 =====
+        // ===== 원형 벽 + 평평한 바닥 =====
         function buildWalls() {
           if (walls.length) Composite.remove(world, walls);
 
@@ -305,8 +307,8 @@
           for (let i = 0; i < SEGMENTS; i++) {
             const a = (i / SEGMENTS) * Math.PI * 2;
 
-            // 바닥(H)보다 아래에 있는 곡선 조각은 제외
-            if (CY + Math.sin(a) * R > H) continue;
+            // 바닥선보다 충분히 아래에 있는 조각만 제외 (모서리 틈 방지)
+            if (CY + Math.sin(a) * R > H + 150) continue;
 
             const dist = R + WALL_T / 2;
             walls.push(
@@ -317,23 +319,21 @@
             );
           }
 
-          // 평평한 바닥: 윗면이 정확히 y = H
-          walls.push(Bodies.rectangle(W / 2, H + WALL_T / 2, W + WALL_T * 2, WALL_T, { isStatic: true }));
+          // 평평한 바닥: 윗면이 정확히 y = H (두께 300)
+          walls.push(Bodies.rectangle(W / 2, H + 150, W + 400, 300, { isStatic: true }));
 
           Composite.add(world, walls);
         }
         buildWalls();
-
-        // ===== 마크업에 있는 .ball마다 물리 바디 생성 (크기는 CSS에서 읽음) =====
-        // ===== 구슬 투입 타이밍 =====
 
         // ===== 마크업의 .ball마다 물리 바디 생성 (크기는 CSS에서 읽음) =====
         $stage.find(".ball").each(function () {
           const $el = $(this);
           const r = $el.outerWidth() / 2;
 
-          // 위쪽에서 시작, 좌우만 랜덤
-          const x = W / 2 + (Math.random() - 0.5) * (W - r * 2 - 200);
+          // 위쪽에서 시작, 좌우만 랜덤 (범위가 음수가 되지 않게 보정)
+          const range = Math.max(0, W - r * 2 - W * 0.28);
+          const x = W / 2 + (Math.random() - 0.5) * range;
           const y = r + 10;
 
           const body = Bodies.circle(x, y, r, {
@@ -348,7 +348,7 @@
           $el.css("visibility", "hidden");
         });
 
-        // 1초 뒤 전체 구슬을 동시에 표시 + 투입
+        // 대기 후 전체 구슬을 동시에 표시 + 투입 (ms 조절)
         setTimeout(function () {
           $.each(balls, function (i, b) {
             b.inWorld = true;
@@ -360,10 +360,12 @@
         // ===== 리사이즈: CSS가 바꾼 컨테이너/구슬 크기를 물리 세계에 반영 =====
         function syncSize() {
           const newW = stageEl.clientWidth;
+          const newH = stageEl.clientHeight;
           const ratio = newW / W;
 
-          if (newW !== W) {
+          if (newW !== W || newH !== H) {
             W = newW;
+            H = newH;
             buildWalls();
           }
 
@@ -390,6 +392,8 @@
 
         Events.on(engine, "afterUpdate", function () {
           $.each(balls, function (i, b) {
+            if (!b.inWorld) return; // 투입 전이면 건너뜀
+
             const r = b.circleRadius;
 
             // 각도를 -180°~180°로 정규화 후 ±30°로 제한
