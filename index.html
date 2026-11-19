@@ -1,283 +1,369 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matter.js + jQuery 로또볼</title>
+    <style>
+      @font-face {
+        font-family: "Ria";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2410-1@1.0/RiaSans-ExtraBold.woff2") format("woff2");
+        font-weight: normal;
+        font-display: swap;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>컴투스 사전과제</title>
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="컴투스 사전과제">
-  <meta property="og:description" content="타이니팜 공룡 테마 파크 이벤트 - 테마파크 꼬꼬마 드래곤 만나기, 에어바운스 존 오픈">
-  <meta property="og:site_name" content="컴투스 사전과제">
-  <meta property="og:locale" content="ko_KR">
-  
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="컴투스 사전과제">
-  <meta name="twitter:description" content="타이니팜 공룡 테마 파크 이벤트 - 테마파크 꼬꼬마 드래곤 만나기, 에어바운스 존 오픈">
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/moonspam/NanumBarunGothic@latest/nanumbarungothicsubset.css">
-  <link rel="stylesheet" href="./src/css/main.css">
-</head>
+      @font-face {
+        font-family: "KerisKedyuche";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2601-3@1.0/KERISKEDU_R.woff2") format("woff2");
+        font-weight: 400;
+        font-display: swap;
+      }
 
-<body>
-  <h1 class="sr-only">컴투스 사전과제</h1>
-  <div class="countdown" role="timer" aria-live="polite" aria-label="이벤트 종료까지 남은 시간">
-    <span class="countdown-date">2026-01-17 00:00 ~ 2026-01-24 00:00 (KST)</span>
-    <span class="countdown-time">
-      <span class="days">00</span>일 
-      <span class="hours">00</span>시간 
-      <span class="minutes">00</span>분 
-      <span class="seconds">00</span>초
-    </span>
-  </div>
-  <main>
-    <div id="top"></div>
-    <nav class="anchor-nav" aria-label="페이지 내비게이션">
-      <a href="#top" class="anchor-btn top" aria-label="페이지 상단으로 이동">▲</a>
-      <a href="#section-1" class="anchor-btn" aria-label="섹션 1로 이동">1</a>
-      <a href="#section-2" class="anchor-btn" aria-label="섹션 2로 이동">2</a>
-      <a href="#section-event" class="anchor-btn event" aria-label="이벤트 섹션으로 이동">★</a>
-      <a href="#section-3" class="anchor-btn" aria-label="섹션 3로 이동">3</a>
-    </nav>
-    <section class="event-section section-1">
-      <div class="inner">
-        <h2 id="section-1" class="section-tit">1. 테마파크 꼬꼬마 드래곤 만나기</h2>
-        <div class="content">
-          <p class="txt">
-            타이니팜에 놀거리가 가득한 <strong class="highlight">공룡 테마 파크</strong>가 오픈 되었어요! <br />
-            다양한 공룡옷을 입은 <strong class="highlight">공룡옷 동물들</strong>과 함께 다양한 체험과 이벤트에 참여해 볼까요?<br /><br />
-            <strong class="highlight">하나</strong>, <strong class="highlight">교배</strong>에서 <strong class="highlight">공룡옷
-              꼬꼬마 펭귄</strong>, <strong class="highlight">공룡옷 아기곰</strong> 을,<br />
-            물물 교환소에서 <strong class="highlight">공룡옷 꼬꼬마 오리</strong>를 만나보세요.<br />
-            <strong class="highlight">둘</strong>, <strong class="highlight">테마파크 꼬꼬마 드래곤의 알</strong>에서 <strong
-              class="highlight">테마파크 꼬꼬마 드래곤</strong>을 만나보세요!<br />
-            이벤트 첫날, <strong class="highlight">테마파크 꼬꼬마 드래곤</strong>을 획득하신 <strong class="highlight">선착순
-              100분</strong>,<br />
-            5/14 오전 11시 이후 ~ 6/3 오전 11시전까지 <strong class="highlight">매일 선착순 50분</strong>에게<br />
-            한정판 <strong class="highlight">분홍빛 테마파크 꼬꼬마 드래곤</strong>이 찾아 간대요!<br />
-            @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-          </p>
-          <div class="badge"><span>한정판<br />@@@</span></div>
-          <p class="arrow-txt">선착순</p>
-          <div class="card-box">
-            <div class="card-list">
-              <p class="card-tit">테마파크 꼬꼬마 드래곤</p>
-            </div>
-            <div class="card-list">
-              <p class="card-tit">분홍빛 테마파크 꼬꼬마 드래곤</p>
-            </div>
+      @font-face {
+        font-family: "KerisKedyuche";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2601-3@1.0/KERISKEDU_B.woff2") format("woff2");
+        font-weight: 700;
+        font-display: swap;
+      }
+
+      body {
+        margin: 0;
+        display: grid;
+        place-items: center;
+        min-height: 100vh;
+        background: #f4f4f4;
+        font-family: "Ria", sans-serif;
+      }
+
+      .stage_wrap {
+        position: relative;
+        width: 704px;
+        height: 704px;
+        box-sizing: border-box;
+        border-radius: 50%;
+        overflow: hidden;
+        background: url("./images/event/20261127/lotto_bg.png") no-repeat 0 / cover;
+      }
+
+      #stage {
+        width: 100%;
+        height: 585px;
+      }
+
+      /* ===== 구슬 공통 ===== */
+      .ball {
+        position: absolute;
+        left: 0;
+        top: 0;
+        box-sizing: border-box;
+        border-radius: 50%;
+        font-weight: 700;
+        line-height: 1;
+        white-space: nowrap;
+        user-select: none;
+        will-change: transform;
+      }
+
+      .text_wrap {
+        position: absolute;
+        inset: 0;
+        transform-origin: 50% 50%;
+        font-family: "KerisKedyuche", sans-serif;
+      }
+      .ball_tit,
+      .ball_text {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
+      }
+      .ball_tit {
+        font-weight: 400;
+        color: #fff;
+      }
+
+      /* ===== large ===== */
+      .ball.large {
+        width: 200px;
+        height: 200px;
+        color: #954a4e;
+        background: url("./images/event/20261127/lotto_ball01.png") no-repeat 0 / cover;
+      }
+      .ball.large .ball_tit {
+        top: 146px;
+        font-size: 20px;
+      }
+      .ball.large .ball_text {
+        top: 52px;
+      }
+      .ball.large .ball_text span:first-child {
+        font-size: 46px;
+      }
+      .ball.large .ball_text span:last-child {
+        font-size: 43px;
+      }
+
+      /* ===== medium ===== */
+      .ball.medium {
+        width: 150px;
+        height: 150px;
+        color: #98501c;
+        background: url("./images/event/20261127/lotto_ball02.png") no-repeat 0 / cover;
+      }
+      .ball.medium .ball_tit {
+        top: 110px;
+        font-size: 16px;
+      }
+      .ball.medium .ball_text {
+        top: 38px;
+      }
+      .ball.medium .ball_text span:first-child {
+        font-size: 37px;
+      }
+      .ball.medium .ball_text span:last-child {
+        font-size: 35px;
+      }
+
+      /* ===== regular ===== */
+      .ball.regular {
+        width: 120px;
+        height: 120px;
+        color: #007343;
+        background: url("./images/event/20261127/lotto_ball03.png") no-repeat 0 / cover;
+      }
+      .ball.regular .ball_tit {
+        top: 88px;
+        font-size: 13px;
+      }
+      .ball.regular .ball_text {
+        top: 30px;
+      }
+      .ball.regular .ball_text span:first-child {
+        font-size: 30px;
+      }
+      .ball.regular .ball_text span:last-child {
+        font-size: 28px;
+      }
+
+      /* ===== empty ===== */
+      .ball.empty {
+        width: 120px;
+        height: 120px;
+        color: #007343;
+        background: url("./images/event/20261127/lotto_ball_empty.png") no-repeat 0 / cover;
+      }
+
+      .ball.empty .ball_tit {
+        top: 88px;
+        font-size: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="stage_wrap">
+      <div id="stage">
+        <!--
+            [개발 참고]
+            - 구슬 9개가 마크업에 고정되어 있습니다. 개수/종류는 이 HTML에서 관리합니다.
+            - 종류는 클래스로 구분: .large / .medium / .regular
+            - 값 주입 자리 (.text()로 넣을 것, .html() 사용 금지):
+                .ball_text 첫 번째 span = 값 (예: 2100)
+                .ball_text 두 번째 span = 단위 (예: 개)
+                .ball_tit 안의 span     = 제목 (예: 모은 초코칩)
+            - 아래 텍스트는 퍼블 확인용 샘플입니다.
+          -->
+
+        <!-- large x3 -->
+        <div class="ball large">
+          <div class="text_wrap">
+            <p class="ball_text"><span>2100</span><span>개</span></p>
+            <p class="ball_tit"><span>모은 초코칩</span></p>
           </div>
-          <div class="notice-con">
-            <div class="notice-txt">
-              * 테마파크 꼬꼬마 드래곤의 알 에서도 공룡옷 꼬꼬마 펭귄, 공룡옷 아기곰,
-              공룡옷 꼬꼬마 오리를 만날 수 있어요!
-              * 알 마일리지로 획득한 테마파크 꼬꼬마 드래곤은 선착순 조건에 해당 돼요.
-              * 패키지 구매로 획득한 테마파크 꼬꼬마 드래곤은 선착순 조건에 해당되지 않아요.
-              @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-              @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-            </div>
+        </div>
+        <div class="ball large">
+          <div class="text_wrap">
+            <p class="ball_text"><span>8</span><span>월</span></p>
+            <p class="ball_tit"><span>열공한 달</span></p>
+          </div>
+        </div>
+        <div class="ball large">
+          <div class="text_wrap">
+            <p class="ball_text"><span>3</span><span>위</span></p>
+            <p class="ball_tit"><span>열공 순위</span></p>
+          </div>
+        </div>
+
+        <!-- medium x3 -->
+        <div class="ball medium">
+          <div class="text_wrap">
+            <p class="ball_text"><span>12</span><span>위</span></p>
+            <p class="ball_tit"><span>명예의 랭킹</span></p>
+          </div>
+        </div>
+        <div class="ball medium">
+          <div class="text_wrap">
+            <p class="ball_text"><span>화</span><span>요일</span></p>
+            <p class="ball_tit"><span>열공한 요일</span></p>
+          </div>
+        </div>
+        <div class="ball medium">
+          <div class="text_wrap">
+            <p class="ball_text"><span>980</span><span>개</span></p>
+            <p class="ball_tit"><span>모은 초코칩</span></p>
+          </div>
+        </div>
+
+        <!-- regular x2 -->
+        <div class="ball regular">
+          <div class="text_wrap">
+            <p class="ball_text"><span>7</span><span>위</span></p>
+            <p class="ball_tit"><span>열공 순위</span></p>
+          </div>
+        </div>
+        <div class="ball regular">
+          <div class="text_wrap">
+            <p class="ball_text"><span>금</span><span>요일</span></p>
+            <p class="ball_tit"><span>열공한 요일</span></p>
+          </div>
+        </div>
+
+        <div class="ball empty">
+          <div class="text_wrap">
+            <p class="ball_tit"><span>열공 출석부</span></p>
           </div>
         </div>
       </div>
-    </section>
-    <section class="event-section section-2">
-      <div class="inner">
-        <h2 id="section-2" class="section-tit">2. 타이니팜 에어바운스 존 오픈</h2>
-        <div class="content">
-          <p class="txt">
-            <strong class="highlight">공룡 테마 파크</strong>에 어린이 동물들이 신나게 뛰어 놀 수 있는<br />
-            <strong class="highlight">공룡 테마 에어바운스 존</strong>이 오픈했어요!<br />
-            <strong class="highlight">공룡 테마 에어바운스 존</strong>을 이용하려면 <strong class="highlight">에어바운스 입장권</strong>이
-            필요해요!<br />
-            <strong class="highlight">에어바운스 입장권</strong>은 <strong class="highlight">당일 11:00~익일 11:00 까지 진행되는 다양한 미션들을
-              완료 시</strong><br />
-            <strong class="highlight">미션 당 1개의 입장권을 획득</strong> 할 수 있어요!<br />
-            이 외에도 미션 달성 시 다양한 보상도 획득할 수 있어요!<br />
-            지금 바로 <strong class="highlight">공룡옷 동물들</strong>과 함께 미션에 참여해 볼까요?<br />
-            @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-          </p>
-          <div class="item-count">
-            <h3 class="count-tit">에어바운스 입장권<br /> 보유수</h3>
-            <div class="count-num" role="status" aria-live="polite" aria-label="에어바운스 입장권 보유수"><span>0</span></div>
-          </div>
-          <div class="mission-box">
-            <button class="mission-list" onclick="misstionActive(this)">
-              <div class="icon-box">
-                <div class="stamp" aria-hidden="true"></div>
-                <p>X<span>5</span></p>
-              </div>
-              <div class="info-box">
-                <p class="mission-txt">모험가의 오두막에서 <br /> 모험 완료하기 3회</p>
-                <p class="mission-num">(<span class="num">0</span>/<span class="total-num">3</span>)</p>
-              </div>
-            </button>
-            <button class="mission-list" onclick="misstionActive(this)">
-              <div class="icon-box">
-                <div class="stamp zh" aria-hidden="true"></div>
-                <p>X<span>5</span></p>
-              </div>
-              <div class="info-box">
-                <p class="mission-txt">동물 교배하기 1회</p>
-                <p class="mission-num">(<span class="num">0</span>/<span class="total-num">1</span>)</p>
-              </div>
-            </button>
-            <button class="mission-list" onclick="misstionActive(this)">
-              <div class="icon-box">
-                <div class="stamp" aria-hidden="true"></div>
-                <p>X<span>5</span></p>
-              </div>
-              <div class="info-box">
-                <p class="mission-txt">이벤트 럭키백 뽑기 1회</p>
-                <p class="mission-num">(<span class="num">0</span>/<span class="total-num">1</span>)</p>
-                <p class="mission-txt">@@@@@@@@@@</p>
-              </div>
-            </button>
-            <button class="mission-list" onclick="misstionActive(this)">
-              <div class="icon-box">
-                <div class="stamp" aria-hidden="true"></div>
-                <p>X<span>5</span></p>
-              </div>
-              <div class="info-box">
-                <p class="mission-txt">벨TV 광고 보고<br />보상받기 10회</p>
-                <p class="mission-num">(<span class="num">0</span>/<span class="total-num">10</span>)</p>
-              </div>
-            </button>
-            <button class="mission-list" onclick="misstionActive(this)">
-              <div class="icon-box">
-                <div class="stamp" aria-hidden="true"></div>
-                <p>X<span>5</span></p>
-              </div>
-              <div class="info-box">
-                <p class="mission-txt">요리 만들기 5회</p>
-                <p class="mission-num">(<span class="num">0</span>/<span class="total-num">5</span>)</p>
-              </div>
-            </button>
-            <button class="mission-list" onclick="misstionActive(this)">
-              <div class="icon-box">
-                <div class="stamp" aria-hidden="true"></div>
-                <p>X<span>5</span></p>
-              </div>
-              <div class="info-box">
-                <p class="mission-txt">농장 동물들에게<br/> 밥주기 30회</p>
-                <p class="mission-num">(<span class="num">0</span>/<span class="total-num">30</span>)</p>
-              </div>
-            </button>
-            <button class="mission-list" onclick="misstionActive(this)">
-              <div class="icon-box">
-                <div class="stamp" aria-hidden="true"></div>
-                <p>X<span>5</span></p>
-              </div>
-              <div class="info-box">
-                <p class="mission-txt">농민 협회에 요리<br />판매 하기 5회</p>
-                <p class="mission-num">(<span class="num">0</span>/<span class="total-num">1</span>)</p>
-              </div>
-            </button>
-            <button class="mission-list" onclick="misstionActive(this)">
-              <div class="icon-box">
-                <div class="stamp" aria-hidden="true"></div>
-                <p>X<span>5</span></p>
-              </div>
-              <div class="info-box">
-                <p class="mission-txt">마을 출석하기 1회</p>
-                <p class="mission-num">(<span class="num">0</span>/<span class="total-num">1</span>)</p>
-              </div>
-            </button>
-          </div>
-          <h3 id="section-event" class="event-tit">★추가 이벤트!<br /> 에어바운스존 이용 고객님~선물 받아가세요♥</h3>
-          <p class="txt">
-            <strong class="highlight">공룡 테마 에어바운스 존</strong>에서 입장권 획득 개수에 따라 추가 선물을 준비했어요! @@@@@@@@@@@@@@@@@@@@@@@@@
-          </p>
-          <div class="gauge-wrap">
-            <div class="gauge-progress">
-              <div class="gauge-bar"></div>
-            </div>
-            <div class="gauge-step">
-              <div class="step">10</div>
-              <div class="step">20</div>
-              <div class="step">40</div>
-              <div class="step">60</div>
-              <div class="step">80</div>
-              <div class="step">100</div>
-              <div class="step">120</div>
-            </div>
-          </div>
-          <div class="gift-wrap">
-            <button class="gift-list" onclick="misstionActive(this)" aria-label="코인50000개">X <span>50000</span></button>
-            <button class="gift-list" onclick="misstionActive(this)" aria-label="하트20개">X <span>20</span></button>
-            <button class="gift-list" onclick="misstionActive(this)" aria-label="왕관3개">X <span>3</span></button>
-            <button class="gift-list" onclick="misstionActive(this)" aria-label="두루마리 5개">X <span>5</span></button>
-            <button class="gift-list" onclick="misstionActive(this)" aria-label="종 15개">X <span>15</span></button>
-            <button class="gift-list" onclick="misstionActive(this)" aria-label="드래곤 알 1개">X <span>1</span></button>
-            <button class="gift-list" onclick="misstionActive(this)" aria-label="테마파크 꼬꼬마 드래곤의 알 장식 1개"></button>
-          </div>
-          <p class="balloon-txt">테마파크 꼬꼬마 드래곤의 알 장식 x 1</p>
-          <div class="notice-con type2">
-            <div class="notice-txt">
-              * 각 미션 참여 횟수는 매일 오전 11시에 갱신 돼요! <br/>
-              (단, 마을 출석하기, 벨 tv 광고 보고 보상 받기 미션의 경우 점검 이전에 이미 모두 달성 시
-              점검 후 입장권이 자동 지급 돼요.)<br/>
-              * 입장권 획득 개수에 따른 선물은 달성 즉시 선물함으로 지급돼요.
-              @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-              @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-            </div>
-          </div>
-        </div>
-    </section>
-    <section class="event-section section-3">
-      <div class="inner">
-        <h2 id="section-3" class="section-tit">3. 벨 TV에 새로운 채널이 추가되었어요!</h2>
-        <div class="content">
-          <p class="txt">
-            벨TV에 새로운 <strong class="highlight">이벤트 채널 2개</strong>가 오픈 되었어요!<br />
-            이벤트 채널 추가를 기념하여 <strong class="highlight">매일 벨TV를 5회 이상, 10회 이상 시청</strong>시<br />
-            각 횟수 별 보상을 지급해 드려요.
-          </p>
-          <p class="new-channel-txt shadow">New Channel</p>
-          <button class="tv-btn">일별 벨 TV 시청 횟수 <br />보상 정보 확인하기!</button>
-          <div class="card-box item3">
-            <div class="card-list">
-              <h3 class="card-tit">오늘 나의 벨 TV<br />시청횟수</h3>
-              <div class="card-info">
-                <p><span class="highlight">@@</span>회</p>
-              </div>
-            </div>
-            <button class="card-list" onclick="misstionActive(this)">
-              <h3 class="card-tit">5회 보상</h3>
-              <div class="card-info type-btn" aria-label="5회 보상 받기">
-                <div class="stamp" aria-hidden="true"></div>
-              </div>
-            </button>
-            <button class="card-list" onclick="misstionActive(this)">
-              <h3 class="card-tit">10회 보상</h3>
-              <div class="card-info type-btn" aria-label="10회 보상 받기">
-                <div class="stamp zh" aria-hidden="true"></div>
-              </div>
-            </button>
-          </div>
-          <div class="notice-con">
-            <div class="notice-txt">
-              * 벨TV에서 시청한 횟수만 카운트 돼요!
-              * '오늘 나의 벨 TV 시청횟수'는 매일 11시에 초기화 돼요!
-              (벨TV '화면 조정시간'과는 관계가 없어요!)
-              * 벨TV 시청 횟수에 따른 보상은 달성 즉시 선물함으로 지급돼요!
-              @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-              @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <div class="footer-notice">
-      <p class="footer-txt">
-        # 이벤트 문의 : 컴투스 하이브 1:1 문의 <a class="link-txt" href="https://www.withhive.com" target="_blank" rel="noopener noreferrer" aria-label="새창열림">https://www.withhive.com</a><br/>
-        @@@@@@@@@@@@@@@@@@@@@@@@@@@@
-      </p>
     </div>
-  </main>
-  <script src="./src/js/main.js"></script>
-</body>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+    <script>
+      $(function () {
+        const { Engine, Runner, Bodies, Body, Composite, Events, Mouse, MouseConstraint } = Matter;
+
+        const $stage = $("#stage");
+        const stageEl = $stage[0];
+
+        const engine = Engine.create({});
+        engine.gravity.y = 0.3;
+        const world = engine.world;
+        const balls = [];
+        let W = stageEl.clientWidth;
+        let H = stageEl.clientHeight;
+        let walls = [];
+
+        // ===== 원형 벽 =====
+        function buildWalls() {
+          if (walls.length) Composite.remove(world, walls);
+
+          const R = W / 2;
+          const CX = W / 2;
+          const CY = R;
+          const SEGMENTS = 64;
+          const WALL_T = 100;
+          const segLen = (2 * Math.PI * (R + WALL_T / 2)) / SEGMENTS + 2;
+          walls = [];
+
+          for (let i = 0; i < SEGMENTS; i++) {
+            const a = (i / SEGMENTS) * Math.PI * 2;
+
+            // 바닥(H)보다 아래에 있는 곡선 조각은 제외
+            if (CY + Math.sin(a) * R > H) continue;
+
+            const dist = R + WALL_T / 2;
+            walls.push(
+              Bodies.rectangle(CX + Math.cos(a) * dist, CY + Math.sin(a) * dist, WALL_T, segLen, {
+                isStatic: true,
+                angle: a,
+              }),
+            );
+          }
+
+          // 평평한 바닥: 윗면이 정확히 y = H
+          walls.push(Bodies.rectangle(W / 2, H + WALL_T / 2, W + WALL_T * 2, WALL_T, { isStatic: true }));
+
+          Composite.add(world, walls);
+        }
+        buildWalls();
+
+        // ===== 마크업에 있는 .ball마다 물리 바디 생성 (크기는 CSS에서 읽음) =====
+        // ===== 구슬 투입 타이밍 =====
+
+        // ===== 마크업의 .ball마다 물리 바디 생성 (크기는 CSS에서 읽음) =====
+        $stage.find(".ball").each(function () {
+          const $el = $(this);
+          const r = $el.outerWidth() / 2;
+
+          // 위쪽에서 시작, 좌우만 랜덤
+          const x = W / 2 + (Math.random() - 0.5) * (W - r * 2 - 200);
+          const y = r + 10;
+
+          const body = Bodies.circle(x, y, r, {
+            restitution: 0.6,
+            friction: 0.05,
+          });
+          body.$el = $el;
+          body.inWorld = false;
+          balls.push(body);
+
+          // 투입 전에는 숨김
+          $el.css("visibility", "hidden");
+        });
+
+        // 1초 뒤 전체 구슬을 동시에 표시 + 투입
+        setTimeout(function () {
+          $.each(balls, function (i, b) {
+            b.inWorld = true;
+            b.$el.css("visibility", "visible");
+          });
+          Composite.add(world, balls);
+        }, 0);
+
+        // ===== 리사이즈: CSS가 바꾼 컨테이너/구슬 크기를 물리 세계에 반영 =====
+        function syncSize() {
+          const newW = stageEl.clientWidth;
+          const ratio = newW / W;
+
+          if (newW !== W) {
+            W = newW;
+            buildWalls();
+          }
+
+          $.each(balls, function (i, b) {
+            if (ratio !== 1) {
+              Body.setPosition(b, { x: b.position.x * ratio, y: b.position.y * ratio });
+              Body.setVelocity(b, { x: 0, y: 0 });
+            }
+            const newR = b.$el.outerWidth() / 2;
+            const s = newR / b.circleRadius;
+            if (Math.abs(s - 1) > 0.001) Body.scale(b, s, s);
+          });
+        }
+
+        let timer;
+        $(window).on("resize", function () {
+          clearTimeout(timer);
+          timer = setTimeout(syncSize, 80);
+        });
+
+        // ===== 물리 -> DOM =====
+        const MAX_DEG = 30; // ball 최대 기울기 (±)
+        const MAX_RAD = (MAX_DEG * Math.PI) / 180;
+
+        Events.on(engine, "afterUpdate", function () {
+          $.each(balls, function (i, b) {
+            const r = b.circleRadius;
+
+            // 각도를 -180°~180°로 정규화 후 ±30°로 제한
+            const a = Math.atan2(Math.sin(b.angle), Math.cos(b.angle));
+            const tilt = Math.max(-MAX_RAD, Math.min(MAX_RAD, a));
+
+            b.$el.css("transform", "translate(" + (b.position.x - r) + "px," + (b.position.y - r) + "px) rotate(" + tilt + "rad)");
+          });
+        });
+
+        Runner.run(Runner.create(), engine);
+      });
+    </script>
+  </body>
 </html>
